@@ -1,7 +1,7 @@
 
 main {
   max-width: 80%;
-  margin: 25px auto;
+  margin: 50px auto;
 }
 
 // ЕСЛИ ХОЧЕШЬ ДОБАВИТЬ НОВЫЕ ИНСТРУМЕНТЫ, ТО НУЖНО ИЗМЕНИТЬ ПАРАМЕТР grid-template-rows: repeat(2, 1fr); И ВЫСТАВИТЬ НУЖНОЕ ЗНАЧЕНИЕ
@@ -19,9 +19,10 @@ main {
   margin: 15px;
   border: 5px solid #000;
   position: relative;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 1.5;
   transition: 1s;
+  min-height: 400px;
 }
 
 .main__instrument-card:hover {

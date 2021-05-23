@@ -12,24 +12,17 @@
 }
 
 .footer__row {
-  font-size: 18px;
+  font-size: 0.85vw;
   max-width: 30vw;
   margin: 25px auto;
   cursor: pointer;
   h2 {
-    font-size: 26px;
+    font-size: 1.25vw;
     line-height: 1.25;
     padding-bottom: 15px;
     transition: 1s;
   }
-  // h2:hover {
-  //   color: #0099cc;
-  //   transition: 1s;
-  // }
-  // h2:hover::after {
-  //   transition: 1s;
-  //   width: 80px;
-  // }
+
   h2::after {
     content: "";
     display: block;
@@ -46,19 +39,18 @@
     color: #fff;
     line-height: 1.25;
   }
+
   a:hover {
     color: #0099cc;
-    
   }
+
 }
 
 .footer__row:hover {
   h2 {
     color: #0099cc;
-    
   }
   h2::after {
-    
     width: 80px;
   }
 }
