@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front Dev Tools</title>
+    <link rel="stylesheet" href="css/null.min.css" />
+    <link rel="stylesheet" href="css/header.min.css" />
+    <link rel="stylesheet" href="css/grid.min.css" />
+    <link rel="stylesheet" href="css/footer.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav id="menu">
+        <input
+          type="checkbox"
+          id="responsive-menu"
+          onclick="updatemenu()"
+        /><label></label>
+        <ul>
+          <li id="menu__dropdown">
+            <a class="dropdown-arrow" href="#">
+              <div class="header__burger__container">
+                <div class="header__burger__container1">
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
+                </div>
+              </div>
+            </a>
+            <ul class="sub-menus">
+              <li><a href="grid.html">CSS Grid Generator</a></li>
+              <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+              <li><a href="shadow.html">Box-Shadow Generator</a></li>
+              <li><a href="filter.html">CSS-Filters Generator</a></li>
+              <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+              <li><a href="text.html">Text Generator</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div id="header__container">
+          <div id="header__name">
+            <a id="header__link1" href="index.html">Front Dev</a>
+            <a id="header__link2" href="index.html">Tools</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="main__header">
+        <img src="images/grid1.svg" alt="" />
+        <h1>CSS-Grid Generator</h1>
+      </div>
+      <div class="main__container">
+        <div class="main__working-area">
+          <div class="main__grid-container">
+            <p>Working Area</p>
+            <div class="main__working-area__grid">
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+              <div class="working-area__cell"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main__grid-settings-container">
+          <div class="main__grid-settings">
+          
+            <h2>Settings 
+              <div class="tooltip">&#x2754
+                <span class="tooltiptext">Columns - количество столбцов. <br> 
+                  Rows - количество строк. <br>
+                  Columns Gap - отступ между столбцами.<br>
+                   Rows Gap - отступ между строками</span>
+              </div>
+            </h2>
+            <fieldset class="grid-settings__fieldset">
+              <label for="settings-columns" >Columns:</label>
+              <input
+                type="number"
+                min="0"
+                max="12"
+                id="settings-columns"
+                value="4"
+              />
+            </fieldset>
+  
+            <fieldset class="grid-settings__fieldset">
+              <label for="settings-rows">Rows:</label>
+              <input
+                type="number"
+                min="0"
+                max="12"
+                id="settings-rows"
+                value="3"
+              />
+            </fieldset>
+  
+            <fieldset class="grid-settings__fieldset">
+              <label for="settings-column-gap">Columns Gap (px):</label>
+              <input
+                type="number"
+                min="0"
+                max="50"
+                id="settings-column-gap"
+                value="0"
+              />
+            </fieldset>
+  
+            <fieldset class="grid-settings__fieldset">
+              <label for="settings-row-gap">Rows Gap (px):</label>
+              <input
+                type="number"
+                min="0"
+                max="50"
+                id="settings-row-gap"
+                value="0"
+              />
+            </fieldset>
+  
+            <div class="grid-settings__control-panel">
+              <div class="control-panel__container">
+                <div class="control-panel__info-field">
+                  <h2>Grid Template Columns 
+                    <div class="tooltip">&#x2754
+                      <span class="tooltiptext">Свойство Grid Template Columns - определяет, как элементы
+                        будут разделены на вертикальные столбцы, а также какие размеры
+                        они будут иметь</span>
+                    </div>
+                  </h2>
+                </div>
+                <div class="control-panel__control-field">
+                  <p class="control-text">Column 1</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+  
+                <div class="control-panel__control-field">
+                  <p class="control-text">Column 2</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+  
+                <div class="control-panel__control-field">
+                  <p class="control-text">Column 3</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+  
+                <div class="control-panel__control-field">
+                  <p class="control-text">Column 4</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+                <p class="control">
+                  <button class="add-new-element-button">
+                    <span class="add-icon">
+                      <i class="fa fa-plus"></i>
+                    </span>
+                    <span>Добавить стобец</span>
+                  </button>
+                </p>
+              </div>
+            </div>
+  
+            <div class="grid-settings__control-panel">
+              <div class="control-panel__container">
+                <div class="control-panel__info-field">
+                  <h2>Grid Template Rows 
+                    <div class="tooltip">&#x2754
+                      <span class="tooltiptext">Свойство Grid Template Rows - определяет, как элементы будут
+                        разделены на горизонтальные строки, а также какие размеры они
+                        будут иметь</span>
+                    </div>
+                  </h2>
+                </div>
+                <div class="control-panel__control-field">
+                  <p class="control-text">Row 1</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+  
+                <div class="control-panel__control-field">
+                  <p class="control-text">Row 2</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+  
+                <div class="control-panel__control-field">
+                  <p class="control-text">Row 3</p>
+                  <p class="control">
+                    <input type="number" value="100" min="1" />
+                  </p>
+                  <p class="contol">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="px">px</option>
+                        <option value="fr">fr</option>
+                        <option value="%">%</option>
+                        <option value="auto">auto</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="control" id="last-add-button">
+              <button class="add-new-element-button">
+                <span class="add-icon">
+                  <i class="fa fa-plus"></i>
+                </span>
+                <span>Добавить строку</span>
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__code-fields">
+        <div class="code-fields html-field">
+          <p class="code-fields__name">HTML-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content"></div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+        <div class="code-fields css-field">
+          <p class="code-fields__name">CSS-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content">
+
+            </div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer__top-container"></div>
+
+      <div class="footer__bottom-container">
+        <div class="footer__row">
+          <h2>О Front Dev Tools</h2>
+          <p>
+            Сайт Front Dev Tools содержит различные инструменты для генерации
+            кода с помощью удобного графического интерфейса. Такие инструменты
+            экономят время разработчикам, а новички в области
+            frontend-разработки смогут наглядным способом ознакомиться с тем,
+            как работают различные инструменты frontend-разработки.
+          </p>
+        </div>
+
+        <div class="footer__row">
+          <h2>Навигация</h2>
+          <ul>
+            <li><a href="grid.html">CSS Grid Generator</a></li>
+            <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+            <li><a href="shadow.html">Box-Shadow Generator</a></li>
+            <li><a href="filter.html">CSS-Filters Generator</a></li>
+            <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+            <li><a href="text.html">Text Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__row">
+          <h2>Ссылки</h2>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="https://vk.com/varley_electra" target="_blank"
+                ><img src="images/vk.svg" alt="Ссылка на VK"
+              /></a>
+            </li>
+            <li class="social-links__item">
+              <a
+                href="https://www.instagram.com/varley.electra/"
+                target="_blank"
+                ><img src="images/instagram.svg" alt="Ссылка на Instagram"
+              /></a>
+            </li>
+            <li class="social-links__item">
+              <a href="https://github.com/VarleyElectra"
+                ><img
+                  src="images/github.svg"
+                  alt="Ссылка на Github"
+                  target="_blank"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

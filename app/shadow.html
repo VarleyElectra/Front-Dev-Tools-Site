@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front Dev Tools</title>
+    <link rel="stylesheet" href="css/null.min.css" />
+    <link rel="stylesheet" href="css/header.min.css" />
+    <link rel="stylesheet" href="css/shadow.min.css" />
+    <link rel="stylesheet" href="css/footer.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body>
+    <header class="header">
+        <nav id="menu">
+          <input
+            type="checkbox"
+            id="responsive-menu"
+            onclick="updatemenu()"
+          /><label></label>
+          <ul>
+            <li id="menu__dropdown">
+              <a class="dropdown-arrow" href="#">
+                <div class="header__burger__container">
+                  <div class="header__burger__container1">
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                  </div>
+                </div>
+              </a>
+              <ul class="sub-menus">
+                <li><a href="grid.html">CSS Grid Generator</a></li>
+                <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+                <li><a href="shadow.html">Box-Shadow Generator</a></li>
+                <li><a href="filter.html">CSS-Filters Generator</a></li>
+                <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+                <li><a href="text.html">Text Generator</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href='http://'>About</a></li> -->
+          </ul>
+          <!-- <div class="header__container">
+                  <div class="header__name"><a href="index.html">Front Dev</a></div>
+                  <div class="header__name"><a href="index.html">Tools</a></div>
+              </a>
+          </div> -->
+          <div id="header__container">
+            <div id="header__name">
+              <a id="header__link1" href="index.html">Front Dev</a>
+              <a id="header__link2" href="index.html">Tools</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      
+
+      <footer>
+        <div class="footer__top-container"></div>
+  
+        <div class="footer__bottom-container">
+          <div class="footer__row">
+            <h2>О Front Dev Tools</h2>
+            <p>
+              Сайт Front Dev Tools содержит различные инструменты для генерации
+              кода с помощью удобного графического интерфейса. Такие инструменты
+              экономят время разработчикам, а новички в области
+              frontend-разработки смогут наглядным способом ознакомиться с тем,
+              как работают различные инструменты frontend-разработки.
+            </p>
+          </div>
+  
+          <div class="footer__row">
+            <h2>Навигация</h2>
+            <ul>
+              <li><a href="grid.html">CSS Grid Generator</a></li>
+              <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+              <li><a href="shadow.html">Box-Shadow Generator</a></li>
+              <li><a href="filter.html">CSS-Filters Generator</a></li>
+              <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+              <li><a href="text.html">Text Generator</a></li>
+            </ul>
+          </div>
+  
+          <div class="footer__row">
+            <h2>Ссылки</h2>
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="https://vk.com/varley_electra" target="_blank"
+                  ><img src="images/vk.svg" alt="Ссылка на VK"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a
+                  href="https://www.instagram.com/varley.electra/"
+                  target="_blank"
+                  ><img src="images/instagram.svg" alt="Ссылка на Instagram"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a href="https://github.com/VarleyElectra"
+                  ><img
+                    src="images/github.svg"
+                    alt="Ссылка на Github"
+                    target="_blank"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <script src="js/main.min.js"></script>
+</body>
+</html>
