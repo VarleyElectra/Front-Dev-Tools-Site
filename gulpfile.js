@@ -76,7 +76,7 @@ function build() {
 }
 
 
-/* Функция по конвертации scss файлов в css */
+/* Функция по конвертации scss файлов в css. */
 function stylesNull() {
     return src("app/scss/null.scss") // Загрузить файл style.scss
         .pipe(scss({outputStyle: "compressed"})) // Минифицировать его (если убрать параметр у функции, то будет обычный css-файл)
