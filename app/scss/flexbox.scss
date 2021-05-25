@@ -395,6 +395,16 @@ option:hover {
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #000;
+  position: relative;
+  h3 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+.delete-button-container {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .flexbox-item__content{
