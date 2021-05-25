@@ -83,15 +83,16 @@
       <div class="main__grid-settings-container">
         <div class="main__grid-settings">
 
-          <h2>Settings</h2>
+          <h2>Настройки</h2>
 
-          
+
           <div class="settings__grid">
 
             <div class="settings__grid-text div1">
               flex-direction
               <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">Свойство CSS flex-wrap задаёт правила вывода flex-элементов —  в одну строку или в несколько, с переносом блоков. Если перенос разрешён, то возможно задать направление, в котором выводятся блоки.</span>
+                <span class="tooltiptext">flex-direction - CSS свойство, указывающее на то, как flex-элементы
+                  располагаются во flex-контейнере по главной оси и направлению (normal или reversed).</span>
               </div>
             </div>
 
@@ -115,7 +116,9 @@
             <div class="settings__grid-text div1">
               flex-wrap
               <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">Свойство CSS flex-wrap задаёт правила вывода flex-элементов —  в одну строку или в несколько, с переносом блоков. Если перенос разрешён, то возможно задать направление, в котором выводятся блоки.</span>
+                <span class="tooltiptext">Свойство CSS flex-wrap задаёт правила вывода flex-элементов — в одну строку
+                  или в несколько, с переносом блоков. Если перенос разрешён, то возможно задать направление, в котором
+                  выводятся блоки.</span>
               </div>
             </div>
 
@@ -138,7 +141,9 @@
             <div class="settings__grid-text div1">
               justify-content
               <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">CSS свойство  justify-content определяет, как браузер распределяет пространство между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid контейнера.</span>
+                <span class="tooltiptext">CSS свойство justify-content определяет, как браузер распределяет пространство
+                  между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid
+                  контейнера.</span>
               </div>
             </div>
             <div class="control__container div2">
@@ -162,7 +167,8 @@
             <div class="settings__grid-text div1">
               align-items
               <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">CSS свойство align-items выравнивает flex-элементы текущей flex-линии таким же образом, как и justify-content, но в перпендикулярном направлении.</span>
+                <span class="tooltiptext">CSS свойство align-items выравнивает flex-элементы текущей flex-линии таким же
+                  образом, как и justify-content, но в перпендикулярном направлении.</span>
               </div>
             </div>
             <div class="control__container div2">
@@ -186,7 +192,8 @@
             <div class="settings__grid-text div1">
               align-content
               <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">Свойство css align-content устанавливает распределение пространства между и вокруг элементами контента вдоль поперечной оси flexbox контейнера</span>
+                <span class="tooltiptext">CSS-свойство align-content устанавливает распределение пространства между и
+                  вокруг элементами контента вдоль поперечной оси flexbox контейнера</span>
               </div>
             </div>
             <div class="control__container div2">
@@ -210,19 +217,103 @@
           <div class="grid-settings__control-panel">
             <div class="control-panel__container">
               <div class="control-panel__info-field">
-                <h2>Flexbox items settings
-                  <div class="tooltip">&#x2754
-                    <span class="tooltiptext">Свойство order - порядок flex элемента <br>
-                    Свойство flex: <br>
-                    flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено текущему элементу<br>
-                    flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
-                    flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер контент-бокса, если не задано иначе через box-sizing.
-                    </span>
-                  </div>
-                </h2>
+                <h2>Flexbox items</h2>
               </div>
             </div>
           </div>
+
+
+          <div class="flexbox-item__container">
+
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  order
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  flex
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство flex: <br>
+                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
+                      текущему элементу<br>
+                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
+                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
+                      контент-бокса, если не задано иначе через box-sizing.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div3">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div4">
+                <p class="control">
+                  <input type="text" value="auto" min="0" />
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content" id="flexbox__input">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  align-self
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="contol" id="flexbox__control">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="auto">auto</option>
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">baseline</option>
+                      <option value="space-around">stretch</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+              
+            </div>
+            
+          </div>
+          <p class="control">
+            <button class="add-new-element-button">
+              <span class="add-icon">
+                <i class="fa fa-plus"></i>
+              </span>
+              <span>Добавить элемент</span>
+            </button>
+          </p>
         </div>
       </div>
     </div>
