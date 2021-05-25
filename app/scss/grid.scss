@@ -213,7 +213,7 @@ main {
 }
 
 .delete-button {
-  border: 1px solid #cdddfe;
+  border: 2px solid #000;
   background-color: rgb(255, 56, 96);
   border-radius: 5%;
   color: #fff;
@@ -343,4 +343,13 @@ main {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1; /* Показываем подсказку */
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

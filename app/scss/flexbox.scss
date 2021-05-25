@@ -40,11 +40,6 @@ main {
   margin-bottom: 25px;
 }
 
-// .main__header:hover {
-//   h1 {
-//     color: #0099cc;
-//   }
-// }
 
 .main__grid-container {
   position: relative;
@@ -79,8 +74,9 @@ main {
 .working-area__cell {
   box-shadow: 0px 0px 0px 1px rgba(34, 60, 80, 1);
   background-color: #fff;
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 7.5vw;
+  min-height: 7.5vw;
+  padding: 5px;
   overflow: hidden;
 }
 
@@ -237,7 +233,7 @@ option:hover {
 }
 
 .delete-button {
-  border: 1px solid #cdddfe;
+  border: 2px solid #000;
   background-color: rgb(255, 56, 96);
   border-radius: 5%;
   color: #fff;
@@ -390,7 +386,7 @@ option:hover {
 }
 
 .flexbox-item__container {
-  background-color: #0099cc;
+  background-color: #4bd1fe;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -413,6 +409,7 @@ option:hover {
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  
   // margin: 5px;
 }
 

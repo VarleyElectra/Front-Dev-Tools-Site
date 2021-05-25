@@ -63,10 +63,10 @@
         <div class="main__grid-container">
           <p>Рабочая область</p>
           <div class="main__working-area__flex">
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
+            <div class="working-area__cell">1</div>
+            <div class="working-area__cell">2</div>
+            <div class="working-area__cell">3</div>
+            <!-- <div class="working-area__cell">4</div> -->
             <!-- <div class="working-area__cell"></div>
             <div class="working-area__cell"></div>
             <div class="working-area__cell"></div>
@@ -222,6 +222,194 @@
             </div>
           </div>
 
+
+          <div class="flexbox-item__container">
+            <h3>Элемент №1</h3>
+            <div class="delete-button-container">
+              <p class="control">
+                <button aria-label="Delete property" class="delete-button">
+                  <span class="delete-button__icon">
+                    <i aria-hidden="true" class="fa fa-times"></i>
+                  </span>
+                </button>
+              </p>
+            </div>
+            
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  order
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  flex
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство flex: <br>
+                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
+                      текущему элементу<br>
+                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
+                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
+                      контент-бокса, если не задано иначе через box-sizing.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div3">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div4">
+                <p class="control">
+                  <input type="text" value="auto" min="0" />
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content" id="flexbox__input">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  align-self
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="contol" id="flexbox__control">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="auto">auto</option>
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">baseline</option>
+                      <option value="space-around">stretch</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class="flexbox-item__container">
+            <h3>Элемент №1</h3>
+            <div class="delete-button-container">
+              <p class="control">
+                <button aria-label="Delete property" class="delete-button">
+                  <span class="delete-button__icon">
+                    <i aria-hidden="true" class="fa fa-times"></i>
+                  </span>
+                </button>
+              </p>
+            </div>
+            
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  order
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  flex
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство flex: <br>
+                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
+                      текущему элементу<br>
+                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
+                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
+                      контент-бокса, если не задано иначе через box-sizing.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div3">
+                <p class="control">
+                  <input type="number" min="0" value="0">
+                </p>
+              </div>
+
+              <div class="flexbox-item__div4">
+                <p class="control">
+                  <input type="text" value="auto" min="0" />
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="flexbox-item__content" id="flexbox__input">
+              <div class="flexbox-item__div1">
+                <div class="settings__grid-text">
+                  align-self
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexbox-item__div2">
+                <p class="contol" id="flexbox__control">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="auto">auto</option>
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">baseline</option>
+                      <option value="space-around">stretch</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+              
+            </div>
+            
+          </div>
 
           <div class="flexbox-item__container">
             <h3>Элемент №1</h3>
