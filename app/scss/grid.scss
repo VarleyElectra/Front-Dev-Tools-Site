@@ -18,7 +18,7 @@ main {
 
 .main__header {
   height: 100px;
-  background-color: #cdddfe;
+  background-color: #befaff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -60,7 +60,7 @@ main {
 
 .main__working-area {
   grid-area: area;
-  background-color: #cdddfe;
+  background-color: #befaff;
   border: 2px solid #000;
   // overflow: auto;
 }
@@ -83,7 +83,7 @@ main {
 
 
 .main__grid-settings {
-  background-color: #cdddfe;
+  background-color: #befaff;
   border: 2px solid #000;
   h2 {
     font-size: 1.5vw;
@@ -227,20 +227,24 @@ main {
   color: #000;
 }
 
+.add-new-element-button-container {
+  margin-bottom: 15px;
+}
+
 .add-new-element-button {
   background-color: #fff;
   color: #000;
   border: 2px solid #000;
-  padding: 7.5px;
+  padding: 1vw;
   border-radius: 2.5%;
-  margin: 0 auto;
+  margin: 15px auto;
   display: block;
   transition: 0.5s;
   margin-bottom: 5px;
 }
 
-#last-add-button {
-  margin-bottom: 20px;
+#add-new-column {
+  margin-bottom: 0px;
 }
 
 .add-new-element-button:hover {
@@ -250,7 +254,7 @@ main {
 
 .main__code-fields {
   min-height: 300px;
-  // background-color: #cdddfe;
+  // background-color: #befaff;
   font-size: 1.25vw;
   // border: 2px solid #000;
   margin-top: 25px;
@@ -270,12 +274,12 @@ main {
 }
 
 .html-field {
-  background-color: #cdddfe;
+  background-color: #befaff;
   border: 2px solid #000;
 }
 
 .css-field {
-  background-color: #cdddfe;
+  background-color: #befaff;
   border: 2px solid #000;
 }
 
@@ -324,17 +328,18 @@ main {
 .tooltip .tooltiptext {
   visibility: hidden;
   min-width: 25vw; /* Ширина подсказки */
-  top: 0; right: 0;/* Положение подсказки */
+  top: 0;
+  right: 0; /* Положение подсказки */
   background: #3989c9;
   color: #fff;
   text-align: center;
   padding: 7.5px;
   border-radius: 6px;
   z-index: 2;
-  font-size: 1vw;
+  font-size: 0.8vw;
   line-height: 1vw;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.15s;
   /* Position the tooltip text - see examples below! */
   position: absolute;
 }
