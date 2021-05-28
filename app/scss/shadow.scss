@@ -226,8 +226,7 @@ option:hover {
 }
 
 .delete-button {
-  border-bottom: 2px solid #000;
-  border-left: 2px solid #000;
+  border: 2px solid #000;
   background-color: rgb(255, 56, 96);
   color: #fff;
   padding: 2.5px;
@@ -401,8 +400,8 @@ option:hover {
 }
 .delete-button-container {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 0.2vw;
+  top: 0.2vw;
 }
 
 .flexbox-item__content {
@@ -472,6 +471,11 @@ input::-webkit-inner-spin-button {
 input[type="color"] {
   padding: 2px;
   width: 100%;
+  transition: 1s;
+}
+input[type="color"]:hover {
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
 }
 #add-new-element-button {
   margin: 15px 0;

@@ -14,71 +14,33 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
-<body>
+  <body>
     <header class="header">
-        <nav id="menu">
-          <input
-            type="checkbox"
-            id="responsive-menu"
-            onclick="updatemenu()"
-          /><label></label>
-          <ul id="menu__ul">
-            <li id="menu__dropdown">
-              <a class="dropdown-arrow" href="#">
-                <div class="header__burger__container">
-                  <div class="header__burger__container1">
-                    <div class="header__burger__item"></div>
-                    <div class="header__burger__item"></div>
-                    <div class="header__burger__item"></div>
-                  </div>
+      <nav id="menu">
+        <input
+          type="checkbox"
+          id="responsive-menu"
+          onclick="updatemenu()"
+        /><label></label>
+        <ul id="menu__ul">
+          <li id="menu__dropdown">
+            <a class="dropdown-arrow" href="#">
+              <div class="header__burger__container">
+                <div class="header__burger__container1">
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
                 </div>
-              </a>
-              <ul class="sub-menus">
-                <li><a href="grid.html">CSS Grid Generator</a></li>
-                <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
-                <li><a href="shadow.html">Box-Shadow Generator</a></li>
-                <li><a href="filter.html">CSS-Filters Generator</a></li>
-                <li><a href="gradient.html">CSS-Gradient Generator</a></li>
-                <li><a href="text.html">Text Generator</a></li>
-              </ul>
-            </li>
-            <!-- <li><a href='http://'>About</a></li> -->
-          </ul>
-          <!-- <div class="header__container">
-                  <div class="header__name"><a href="index.html">Front Dev</a></div>
-                  <div class="header__name"><a href="index.html">Tools</a></div>
-              </a>
-          </div> -->
-          <div id="header__container">
-            <div id="header__name">
-              <a id="header__link1" href="index.html">Front Dev</a>
-              <a id="header__link2" href="index.html">Tools</a>
-            </div>
-          </div>
-        </nav>
-      </header>
-      
-      
-
-      <footer>
-        <div class="footer__top-container"></div>
-  
-        <div class="footer__bottom-container">
-          <div class="footer__row">
-            <h2>О Front Dev Tools</h2>
-            <p>
-              Сайт Front Dev Tools содержит различные инструменты для генерации
-              кода с помощью удобного графического интерфейса. Такие инструменты
-              экономят время разработчикам, а новички в области
-              frontend-разработки смогут наглядным способом ознакомиться с тем,
-              как работают различные инструменты frontend-разработки.
-            </p>
-          </div>
-  
-          <div class="footer__row">
-            <h2>Навигация</h2>
-            <ul>
+              </div>
+            </a>
+            <ul class="sub-menus">
               <li><a href="grid.html">CSS Grid Generator</a></li>
               <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
               <li><a href="shadow.html">Box-Shadow Generator</a></li>
@@ -86,35 +48,316 @@
               <li><a href="gradient.html">CSS-Gradient Generator</a></li>
               <li><a href="text.html">Text Generator</a></li>
             </ul>
-          </div>
-  
-          <div class="footer__row">
-            <h2>Ссылки</h2>
-            <ul class="social-links">
-              <li class="social-links__item">
-                <a href="https://vk.com/varley_electra" target="_blank"
-                  ><img src="images/vk.svg" alt="Ссылка на VK"
-                /></a>
-              </li>
-              <li class="social-links__item">
-                <a
-                  href="https://www.instagram.com/varley.electra/"
-                  target="_blank"
-                  ><img src="images/instagram.svg" alt="Ссылка на Instagram"
-                /></a>
-              </li>
-              <li class="social-links__item">
-                <a href="https://github.com/VarleyElectra"
-                  ><img
-                    src="images/github.svg"
-                    alt="Ссылка на Github"
-                    target="_blank"
-                /></a>
-              </li>
-            </ul>
+          </li>
+        </ul>
+        <div id="header__container">
+          <div id="header__name">
+            <a id="header__link1" href="index.html">Front Dev</a>
+            <a id="header__link2" href="index.html">Tools</a>
           </div>
         </div>
-      </footer>
-      <script src="js/main.min.js"></script>
-</body>
+      </nav>
+    </header>
+
+    <main>
+      <div class="main__header">
+        <h1>CSS-Gradient Генератор</h1>
+      </div>
+      <div class="main__container">
+        <div class="main__working-area">
+          <div class="main__grid-container">
+            <p>Рабочая область</p>
+            <div class="main__working-area__flex">
+              <div class="working-area__cell"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main__grid-settings-container">
+          <div class="main__grid-settings">
+  
+            <h2>Настройки</h2>
+  
+              <!-- <div class="delete-button-container">
+                <p class="control">
+                  <button aria-label="Delete property" class="delete-button">
+                    <span class="delete-button__icon">
+                      <i aria-hidden="true" class="fa fa-times"></i>
+                    </span>
+                  </button>
+                </p>
+              </div> -->
+              <div class="gradient-direction__container">
+                <span>
+                  Направление
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Позволяет задать направление градиента в градусах.</span>
+                  </div>
+                </span>
+                <div class="gradient-direction__grid">
+                  <div class="gradient-direction__item" id="gradient-direction__item__1">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__2">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__3">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__4">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__5">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__6">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__7">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                  <div class="gradient-direction__item" id="gradient-direction__item__8">
+                    <img src="images/arrow-main.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="flexbox-item__content" id="flexbox-item__content__select">
+
+                <div class="flexbox-item__div1">
+                  inset
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Если ключевое слово inset не указано (по умолчанию), тень будет снаружи элемента (и создаст эффект выпуклости блока).
+                      При наличие ключевого слова inset, тень будет падать внутри блока и создаст эффект вдавленности блока. Inset-тени рисуются в пределах границ элемента (даже прозрачные), поверх фона и за контентом.</span>
+                  </div>
+                </div>
+    
+                <div class="flexbox-item__div2">
+                  <p class="contol" id="first-control">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="row">yes</option>
+                        <option value="row-reverse">no</option>
+                      </select>
+                    </span>
+                  </p>
+                </div>
+    
+              </div>
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                   offset-x
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Существуют 2 значения, которые устанавливают смещение тени. offset-x определяет горизонтальное расстояние. Отрицательные значения располагают тень слева от элемента.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control" >
+                    <input type="number" min="-100" max="100" value="4">
+                  </p>
+                </div>
+
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" min="-100" max="100" value="4" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    offset-y
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Существуют 2 значения length, которые устанавливают смещение тени. offset-y определяет вертикальное расстояние. Отрицательные значения располагают тень выше элемента.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="-100" max="100" value="4">
+                  </p>
+                </div>
+
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" min="-100" max="100" value="4" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    blur-radius
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Чем больше это значение, тем больше и светлее размытие тени. Отрицательные значения не поддерживаются. Если не определено, будет использоваться 0 (резкий край тени).</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="0" max="100" value="8">
+                  </p>
+                </div>
+
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" min="0" max="100" value="8" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    spread-radius
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Положительные значения увеличивают тень, отрицательные - сжимают. По умолчанию значение равно 0 (размер тени равен размеру элемента).</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="-100" max="100" value="0">
+                  </p>
+                </div>
+
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" min="-100" max="100" value="0" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    transparent
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Параметр transparent позволяет настроить прозрачность цвета тени</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="0" max="1" value="0.4">
+                  </p>
+                </div>
+
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" step="any" min="0.0" max="1.0" value="0.4" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+              <div class="flexbox-item__content__select">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                   shadow color
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Свойство, позволяющее задать цвет для тени.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="color">
+                  </p>
+                </div>
+
+              </div>
+            
+            
+            <div class="add-new-element-button-container">
+              <button class="add-new-element-button">
+                <span class="add-icon">
+                  <i class="fa fa-plus"></i>
+                </span>
+                <span>Добавить элемент</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main__code-fields">
+        <div class="code-fields html-field">
+          <p class="code-fields__name">HTML-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content"></div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+        <div class="code-fields css-field">
+          <p class="code-fields__name">CSS-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content">
+  
+            </div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer__top-container"></div>
+
+      <div class="footer__bottom-container">
+        <div class="footer__row">
+          <h2>О Front Dev Tools</h2>
+          <p>
+            Сайт Front Dev Tools содержит различные инструменты для генерации
+            кода с помощью удобного графического интерфейса. Такие инструменты
+            экономят время разработчикам, а новички в области
+            frontend-разработки смогут наглядным способом ознакомиться с тем,
+            как работают различные инструменты frontend-разработки.
+          </p>
+        </div>
+
+        <div class="footer__row">
+          <h2>Навигация</h2>
+          <ul>
+            <li><a href="grid.html">CSS Grid Generator</a></li>
+            <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+            <li><a href="shadow.html">Box-Shadow Generator</a></li>
+            <li><a href="filter.html">CSS-Filters Generator</a></li>
+            <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+            <li><a href="text.html">Text Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__row">
+          <h2>Ссылки</h2>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="https://vk.com/varley_electra" target="_blank"
+                ><img src="images/vk.svg" alt="Ссылка на VK"
+              /></a>
+            </li>
+            <li class="social-links__item">
+              <a
+                href="https://www.instagram.com/varley.electra/"
+                target="_blank"
+                ><img src="images/instagram.svg" alt="Ссылка на Instagram"
+              /></a>
+            </li>
+            <li class="social-links__item">
+              <a href="https://github.com/VarleyElectra"
+                ><img
+                  src="images/github.svg"
+                  alt="Ссылка на Github"
+                  target="_blank"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
 </html>
