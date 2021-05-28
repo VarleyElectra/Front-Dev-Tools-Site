@@ -9,7 +9,6 @@ main {
 .main__container {
   min-height: 600px;
   display: grid;
-  overflow: auto;
   grid-template-columns: auto 25%;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
