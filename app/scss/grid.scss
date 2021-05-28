@@ -40,11 +40,6 @@ main {
   margin-bottom: 25px;
 }
 
-// .main__header:hover {
-//   h1 {
-//     color: #0099cc;
-//   }
-// }
 
 .main__grid-container {
   position: relative;
@@ -85,6 +80,7 @@ main {
 .main__grid-settings {
   background-color: #befaff;
   border: 2px solid #000;
+  min-height: 100%;
   h2 {
     font-size: 1.5vw;
     margin-bottom: 10px;
@@ -145,7 +141,6 @@ main {
 }
 
 .grid-settings__control-panel {
-  border-top: 1px solid #dbdbdb;
   padding: 1em;
 }
 
