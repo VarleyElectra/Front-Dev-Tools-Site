@@ -123,10 +123,14 @@
               <div class="flexbox-item__content" id="flexbox-item__content__select">
 
                 <div class="flexbox-item__div1">
-                  inset
+                  gradient-type
                   <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Если ключевое слово inset не указано (по умолчанию), тень будет снаружи элемента (и создаст эффект выпуклости блока).
-                      При наличие ключевого слова inset, тень будет падать внутри блока и создаст эффект вдавленности блока. Inset-тени рисуются в пределах границ элемента (даже прозрачные), поверх фона и за контентом.</span>
+                    <span class="tooltiptext">Позволяет задать тип градиента.<br>
+                      linear-gradient - переход между цветами вдоль прямой линии <br>
+                      radial-gradient-circle - переход между цветами, которые исходят от точки. Имеет форму окружности. <br>
+                      radial-gradient-ellipse - переход между цветами, которые исходят от точки. Имеет форму эллипса. <br>
+                      conic-gradient -  создает изображение, состоящее из градиента с цветовыми переходами, поворачивающимися вокруг центральной точки (а не от центра). <br>
+                     </span>
                   </div>
                 </div>
     
@@ -134,150 +138,118 @@
                   <p class="contol" id="first-control">
                     <span class="select">
                       <select aria-label="Grid Template Columns">
-                        <option value="row">yes</option>
-                        <option value="row-reverse">no</option>
+                        <option value="linear-gradient">linear-gradient</option>
+                        <option value="radial-gradient-circle">radial-gradient-circle</option>
+                        <option value="radial-gradient-ellipse">radial-gradient-ellipse</option>
+                        <option value="conic-gradient">conic-gradient</option>
                       </select>
                     </span>
                   </p>
                 </div>
     
               </div>
-              <div class="flexbox-item__content">
+
+              <!-- НЕ УДАЛЯТЬ-->
+              <!-- <div class="flexbox-item__content" id="flexbox-item__content__select">
+
                 <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                   offset-x
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Существуют 2 значения, которые устанавливают смещение тени. offset-x определяет горизонтальное расстояние. Отрицательные значения располагают тень слева от элемента.</span>
-                    </div>
+                  gradient-position
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Позволяет задать расположение начальной точки градиента<br>
+                     </span>
                   </div>
                 </div>
-
+    
                 <div class="flexbox-item__div2">
+                  <p class="contol" id="first-control">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns">
+                        <option value="1">top left</option>
+                        <option value="2">top</option>
+                        <option value="3">top-right</option>
+                        <option value="4">left</option>
+                        <option value="5">center</option>
+                        <option value="6">right</option>
+                        <option value="7">bottom left</option>
+                        <option value="8">bottom</option>
+                        <option value="9">bottom-right</option>
+                      </select>
+                    </span>
+                  </p>
+                </div>
+              </div> -->
+
+              <div class="gradient-settings__grid-container">
+                <div class="delete-button-container">
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+                <div class="gradient-settings__item1">
+                  <div class="settings__grid-text">
+                    цвет №1
+                   </div>
+                </div>
+                <div class="gradient-settings__item2">
+                  <p class="control">
+                    <input type="number" min="0" max="100" value="0">
+                  </p>
+                </div>
+                <div class="gradient-settings__item3">
+                  <p class="control">
+                    <input type="color" value="#0f46e8">
+                  </p>
+                </div>
+                <div class="gradient-settings__item4">
+                  <p class="control">
+                    <input type="range" min="0" max="100" value="0" class="control__range-input">
+                  </p>
+                </div>
+              </div>
+
+              <div class="gradient-settings__grid-container">
+                <div class="delete-button-container">
+                  <p class="control">
+                    <button aria-label="Delete property" class="delete-button">
+                      <span class="delete-button__icon">
+                        <i aria-hidden="true" class="fa fa-times"></i>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+                <div class="gradient-settings__item1">
+                  <div class="settings__grid-text">
+                    цвет №2
+                   </div>
+                </div>
+                <div class="gradient-settings__item2">
+                  <p class="control">
+                    <input type="number" min="0" max="100" value="0">
+                  </p>
+                </div>
+                <div class="gradient-settings__item3">
                   <p class="control" >
-                    <input type="number" min="-100" max="100" value="4">
+                    <input type="color" value="#f00b00">
                   </p>
                 </div>
-
-                <div class="flexbox-item__div3">
+                <div class="gradient-settings__item4">
                   <p class="control">
-                    <input type="range" min="-100" max="100" value="4" class="control__range-input">
+                    <input type="range" min="0" max="100" value="0" class="control__range-input">
                   </p>
                 </div>
               </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    offset-y
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Существуют 2 значения length, которые устанавливают смещение тени. offset-y определяет вертикальное расстояние. Отрицательные значения располагают тень выше элемента.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="-100" max="100" value="4">
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="-100" max="100" value="4" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    blur-radius
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Чем больше это значение, тем больше и светлее размытие тени. Отрицательные значения не поддерживаются. Если не определено, будет использоваться 0 (резкий край тени).</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="8">
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="8" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    spread-radius
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Положительные значения увеличивают тень, отрицательные - сжимают. По умолчанию значение равно 0 (размер тени равен размеру элемента).</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="-100" max="100" value="0">
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="-100" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    transparent
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Параметр transparent позволяет настроить прозрачность цвета тени</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="1" value="0.4">
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" step="any" min="0.0" max="1.0" value="0.4" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content__select">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                   shadow color
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Свойство, позволяющее задать цвет для тени.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="color">
-                  </p>
-                </div>
-
-              </div>
-            
-            
+              
+       
             <div class="add-new-element-button-container">
               <button class="add-new-element-button">
                 <span class="add-icon">
                   <i class="fa fa-plus"></i>
                 </span>
-                <span>Добавить элемент</span>
+                <span>Добавить цвет</span>
               </button>
             </div>
           </div>
