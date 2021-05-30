@@ -185,7 +185,11 @@ main {
   display: block;
   height: 30px;
   // margin: 5px;
-
+  span {
+    position: absolute; 
+    right: 1.4vw; 
+    top: 8px;
+  }
   input {
     width: 100%;
     border: 1px solid #000;
@@ -455,14 +459,14 @@ option:hover {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
+  // -moz-appearance: textfield;
   width: 100%;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+// }
 input[type="color"] {
   padding: 2px;
   width: 100%;
@@ -474,4 +478,7 @@ input[type="color"]:hover {
 }
 #add-new-element-button {
   margin: 15px 0;
+}
+.delete-button__icon {
+  position: initial !important;
 }

@@ -565,6 +565,7 @@ option:hover {
 // }
 #flexbox-item__content__select {
   grid-template-rows: 30px;
+  grid-template-columns: 1fr 2fr;
   margin-top: 1.5vw;
   margin-bottom: 1vw;
 }
