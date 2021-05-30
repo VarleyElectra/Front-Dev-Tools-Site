@@ -14,6 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
   </head>
 <body>
     <header class="header">
@@ -43,13 +49,8 @@
                 <li><a href="text.html">Text Generator</a></li>
               </ul>
             </li>
-            <!-- <li><a href='http://'>About</a></li> -->
           </ul>
-          <!-- <div class="header__container">
-                  <div class="header__name"><a href="index.html">Front Dev</a></div>
-                  <div class="header__name"><a href="index.html">Tools</a></div>
-              </a>
-          </div> -->
+
           <div id="header__container">
             <div id="header__name">
               <a id="header__link1" href="index.html">Front Dev</a>
@@ -59,7 +60,276 @@
         </nav>
       </header>
       
-      
+    <main>
+      <div class="main__header">
+        <h1>Text Генератор</h1>
+      </div>
+      <div class="main__container">
+        <div class="main__working-area">
+          <div class="main__grid-container">
+            <p>Рабочая область</p>
+            <div class="main__working-area__flex">
+              <div class="working-area__cell">
+                <textarea name="" id="" cols="75" rows="15" placeholder="Введи свой текст">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro voluptas fuga ducimus hic, animi ut alias dicta repudiandae incidunt quo natus vel. Illum modi deserunt porro quisquam provident maxime!</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main__grid-settings-container">
+          <div class="main__grid-settings">
+  
+            <h2>Настройки</h2>
+  
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                font-size
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство font-size изменяет размер шрифта. Оно задаётся с помощью значения и единицы измерения (em, px, pt, %). Единицы измерения em и % являются относительными и зависят от размера шрифта установленного в документе. Единицы измерения px и pt являются абсолютными и их размер зависит от разрешения экрана.</span>
+                  </div>
+              </div>
+              <div class="font-settings__div2">
+                <p class="control">
+                  <input type="number" value="1" min="0">
+                </p>
+              </div>
+              <div class="font-settings__div3">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="vw">vw</option>
+                      <option value="vh">vh</option>
+                      <option value="px">px</option>
+                      <option value="em">em</option>
+                      <option value="rem">rem</option>
+                      <option value="%">%</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                font-weight
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство font-weight изменяет жирность шрифта. Свойство font-weight имеет 2 часто используемых значения: normal (обычное) и bold (жирное). Также можно использовать числовой вариант значения, принимающий значения от 100 до 900.</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="normal">normal</option>
+                      <option value="bold">bold</option>
+                      <option value="100">100</option>
+                      <option value="200">200</option>
+                      <option value="300">300</option>
+                      <option value="400">400</option>
+                      <option value="500">500</option>
+                      <option value="600">600</option>
+                      <option value="700">700</option>
+                      <option value="800">800</option>
+                      <option value="900">900</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                font-style
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Определяет начертание шрифта — обычное, курсивное или наклонное. Когда для текста установлено курсивное или наклонное начертание, браузер обращается к системе для поиска подходящего шрифта. Если заданный шрифт не найден, браузер использует специальный алгоритм для имитации нужного вида текста.</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="normal">normal</option>
+                      <option value="italic">italic</option>
+                      <option value="oblique">oblique</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                font-family
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство font-family изменяет шрифт или список шрифтов с помощью которых отображается текст. В качестве значений свойство font-family принимает названия шрифтов (например: font-family: "Tahoma", "Arial") или предопределенные названия группы шрифтов (serif, sans-serif, monospace, fantasy, cursive).</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="sans-serif">sans-serif</option>
+                      <option value="serif">serif</option>
+                      <option value="cursive">cursive</option>
+                      <option value="fantasy">fantasy</option>
+                      <option value="monospace">monospace</option>
+                      <option value="system-ui">system-ui</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                color
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство, позволяющее задать цвет текста.</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="control">
+                  <input type="color">
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                background
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство, позволяющее задать цвет фона текста, может использоваться для выделения текста, как это делает маркер.</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="control">
+                  <input type="color" value="#ffffff">
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                text-decoration
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство text-decoration можно использовать для декоративного оформления текста. В качестве значений свойства text-decoration можно использовать следующие: none (без декоративного оформления), underline (подчёркивание), overline (линия над текстом), line-through (зачёркивание).</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="none">none</option>
+                      <option value="underline">underline</option>
+                      <option value="overline">overline</option>
+                      <option value="line-through">line-through</option>
+                      <option value="underline">underline</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                text-transform
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство text-transform управляет регистром символов. В качестве значений свойства text-transform можно использовать следующие: none (по умолчанию), lowercase (переводит все символы в строчные), uppercase (переводит все символы в прописные), capitalize (каждое слово начинается с прописного символа).</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="none">none</option>
+                      <option value="lowercase">lowercase</option>
+                      <option value="uppercase">uppercase</option>
+                      <option value="capitalize">capitalize</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                text-align
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство text-align предназначено для выравнивания текста в горизонтальном направлении. Значения свойства text-align указывают, что текст будет выровнен: left (по левому краю), center (по центру), right (по правому краю), justify (по ширине, т.е. одновременно по левому и правому краям).</span>
+                  </div>
+              </div>
+
+              <div class="font-settings__div3 font-settings__2fr_option">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="left">left</option>
+                      <option value="center">center</option>
+                      <option value="right">right</option>
+                      <option value="justify">justify</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                line-height
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство line-height предназначено для задания высоты строки, которая влияет на расстояние между строчками текста. Если использовать в качестве единицы измерения параметра обычное число, то высота строки считается как высота шрифта, умноженная на параметр.</span>
+                  </div>
+              </div>
+              <div class="font-settings__div2">
+                <p class="control">
+                  <input type="number" value="1" min="0">
+                </p>
+              </div>
+              <div class="font-settings__div3">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns">
+                      <option value="vw">vw</option>
+                      <option value="vh">vh</option>
+                      <option value="number">number</option>
+                      <option value="px">px</option>
+                      <option value="em">em</option>
+                      <option value="rem">rem</option>
+                      <option value="%">%</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main__code-fields">
+        <div class="code-fields html-field">
+          <p class="code-fields__name">HTML-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content"></div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+        <div class="code-fields css-field">
+          <p class="code-fields__name">CSS-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content">
+  
+            </div>
+          </div>
+          <button class="code-fields__button">Копировать</button>
+        </div>
+      </div>
+    </main>
 
       <footer>
         <div class="footer__top-container"></div>
