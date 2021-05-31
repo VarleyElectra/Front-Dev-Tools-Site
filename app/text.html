@@ -15,14 +15,15 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-    crossorigin="anonymous"
-  />
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
-<body>
-    <header class="header">
+  <body>
+    <div id="app">
+      <header class="header">
         <nav id="menu">
           <input
             type="checkbox"
@@ -70,7 +71,7 @@
             <p>Рабочая область</p>
             <div class="main__working-area__flex">
               <div class="working-area__cell">
-                <textarea name="" id="" cols="75" rows="15" placeholder="Введи свой текст">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro voluptas fuga ducimus hic, animi ut alias dicta repudiandae incidunt quo natus vel. Illum modi deserunt porro quisquam provident maxime!</textarea>
+                <textarea name="" id="" cols="75" rows="15" v-model="textAreaText" placeholder="Введи свой текст" v-bind:style="{ 'font-size': fontSizeValue + fontSizeUnit, 'font-weight': fontWeight, 'font-style': fontStyle, 'font-family': fontFamily, 'color': color, 'background-color': background, 'text-decoration': textDecoration, 'text-transform': textTransform, 'text-align': textAlign, 'line-height': lineHeightValue + lineHeightUnit}"></textarea>
               </div>
             </div>
           </div>
@@ -89,15 +90,44 @@
               </div>
               <div class="font-settings__div2">
                 <p class="control">
-                  <input type="number" value="1" min="0">
+                  <input type="number" v-model="fontSizeValue" min="0">
                 </p>
               </div>
               <div class="font-settings__div3">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="fontSizeUnit">
                       <option value="vw">vw</option>
                       <option value="vh">vh</option>
+                      <option value="px">px</option>
+                      <option value="em">em</option>
+                      <option value="rem">rem</option>
+                      <option value="%">%</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="main__font-settings">
+              <div class="font-settings__div1">
+                line-height
+                  <div class="tooltip tooltip-settings">&#x2754
+                    <span class="tooltiptext">Свойство line-height предназначено для задания высоты строки, которая влияет на расстояние между строчками текста. Если использовать в качестве единицы измерения параметра обычное число, то высота строки считается как высота шрифта, умноженная на параметр.</span>
+                  </div>
+              </div>
+              <div class="font-settings__div2">
+                <p class="control">
+                  <input type="number" v-model="lineHeightValue" min="0">
+                </p>
+              </div>
+              <div class="font-settings__div3">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="lineHeightUnit">
+                      <option value="vw">vw</option>
+                      <option value="vh">vh</option>
+                      <option value="">number</option>
                       <option value="px">px</option>
                       <option value="em">em</option>
                       <option value="rem">rem</option>
@@ -119,7 +149,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="fontWeight">
                       <option value="normal">normal</option>
                       <option value="bold">bold</option>
                       <option value="100">100</option>
@@ -148,7 +178,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="fontStyle">
                       <option value="normal">normal</option>
                       <option value="italic">italic</option>
                       <option value="oblique">oblique</option>
@@ -169,7 +199,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="fontFamily">
                       <option value="sans-serif">sans-serif</option>
                       <option value="serif">serif</option>
                       <option value="cursive">cursive</option>
@@ -192,7 +222,7 @@
 
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="control">
-                  <input type="color">
+                  <input type="color" v-model="color">
                 </p>
               </div>
             </div>
@@ -207,7 +237,7 @@
 
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="control">
-                  <input type="color" value="#ffffff">
+                  <input type="color" v-model="background">
                 </p>
               </div>
             </div>
@@ -223,7 +253,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="textDecoration">
                       <option value="none">none</option>
                       <option value="underline">underline</option>
                       <option value="overline">overline</option>
@@ -246,7 +276,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="textTransform">
                       <option value="none">none</option>
                       <option value="lowercase">lowercase</option>
                       <option value="uppercase">uppercase</option>
@@ -268,7 +298,7 @@
               <div class="font-settings__div3 font-settings__2fr_option">
                 <p class="contol">
                   <span class="select">
-                    <select aria-label="Grid Template Columns">
+                    <select aria-label="Grid Template Columns" v-model="textAlign">
                       <option value="left">left</option>
                       <option value="center">center</option>
                       <option value="right">right</option>
@@ -277,58 +307,54 @@
                   </span>
                 </p>
               </div>
-            </div>
-
-            <div class="main__font-settings">
-              <div class="font-settings__div1">
-                line-height
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство line-height предназначено для задания высоты строки, которая влияет на расстояние между строчками текста. Если использовать в качестве единицы измерения параметра обычное число, то высота строки считается как высота шрифта, умноженная на параметр.</span>
-                  </div>
-              </div>
-              <div class="font-settings__div2">
-                <p class="control">
-                  <input type="number" value="1" min="0">
-                </p>
-              </div>
-              <div class="font-settings__div3">
-                <p class="contol">
-                  <span class="select">
-                    <select aria-label="Grid Template Columns">
-                      <option value="vw">vw</option>
-                      <option value="vh">vh</option>
-                      <option value="number">number</option>
-                      <option value="px">px</option>
-                      <option value="em">em</option>
-                      <option value="rem">rem</option>
-                      <option value="%">%</option>
-                    </select>
-                  </span>
-                </p>
-              </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
   
       <div class="main__code-fields">
+
         <div class="code-fields html-field">
           <p class="code-fields__name">HTML-код</p>
           <div class="code-fields__container">
-            <div class="code-fields__content"></div>
+            <div class="code-fields__content" id="html__content">
+
+              <pre><code><span class="element">&lt;p</span> id="fdt-text"<span class="element">&gt;</span>
+<span class="textArea">{{ textAreaText }}</span>
+<span class="element">&lt;p/&gt;</span></code></pre>
+
+            </div>
           </div>
-          <button class="code-fields__button">Копировать</button>
+          <button class="code-fields__button" v-on:click="copyText('#html__content')">Копировать</button>
         </div>
+
         <div class="code-fields css-field">
           <p class="code-fields__name">CSS-код</p>
           <div class="code-fields__container">
-            <div class="code-fields__content">
-  
+            <div class="code-fields__content" id="css__content">
+
+              <pre><code><span class="element">#fdt-text {</span>
+<span class="textArea">font-size: {{ fontSizeValue + fontSizeUnit }};</span>
+<span class="textArea">line-height: {{ lineHeightValue + lineHeightUnit }};</span>
+<span class="textArea">font-weight: {{ fontWeight }};</span>
+<span class="textArea">font-style: {{ fontStyle }};</span>
+<span class="textArea">font-family: {{ fontFamily }};</span>
+<span class="textArea">color: {{ color }};</span>
+<span class="textArea">background-color: {{ background }};</span>
+<span class="textArea">text-decoration: {{ textDecoration }};</span>
+<span class="textArea">text-transform: {{ textTransform }};</span>
+<span class="textArea">text-align: {{ textAlign }};</span>
+<span class="element">}</span>
+                </code>
+              </pre>
+
             </div>
           </div>
-          <button class="code-fields__button">Копировать</button>
+          <button class="code-fields__button" v-on:click="copyText('#css__content')">Копировать</button>
         </div>
+
       </div>
+
     </main>
 
       <footer>
@@ -385,6 +411,39 @@
           </div>
         </div>
       </footer>
-      <script src="js/main.min.js"></script>
-</body>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const vueApp = Vue.createApp({
+        data() {
+          return {
+            fontSizeValue: "1",
+            fontSizeUnit: "vw",
+            fontWeight: "normal",
+            fontStyle: "normal",
+            fontFamily: "sans-serif",
+            color: "#000000",
+            background: "#ffffff",
+            textDecoration: "none",
+            textTransform: "none",
+            textAlign: "left",
+            lineHeightValue: "1",
+            lineHeightUnit: "vw",
+            textAreaText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro voluptas fuga ducimus hic, animi ut alias dicta repudiandae incidunt quo natus vel. Illum modi deserunt porro quisquam provident maxime!",
+          }
+        },
+        methods: {
+          copyText(selector) {
+            let text = document.querySelector(`${selector}`);
+
+            let range = document.createRange();
+            range.selectNode(text); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+          },
+        }
+      }).mount("#app");
+    </script>
+  </body>
 </html>
