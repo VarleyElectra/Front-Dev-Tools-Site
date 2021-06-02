@@ -435,7 +435,6 @@
         methods: {
           copyText(selector) {
             let text = document.querySelector(`${selector}`);
-
             let range = document.createRange();
             range.selectNode(text); 
             window.getSelection().addRange(range); 
