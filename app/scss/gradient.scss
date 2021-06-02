@@ -68,9 +68,9 @@ main {
 }
 
 .working-area__cell {
-  background: linear-gradient(45deg, rgb(15, 70, 232), rgb(240, 11, 0));
-  min-width: 15vw;
-  min-height: 15vw;
+  // background: linear-gradient(45deg, rgb(15, 70, 232), rgb(240, 11, 0));
+  min-width: 25vw;
+  min-height: 25vw;
   overflow: hidden;
   border: 1px solid #000;
 }
@@ -582,14 +582,9 @@ option:hover {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
   width: 100%;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
 input[type="color"] {
   padding: 2px;
   width: 100%;
@@ -601,4 +596,12 @@ input[type="color"]:hover {
 }
 #add-new-element-button {
   margin: 15px 0;
+}
+
+.textArea {
+  white-space: normal;
+  margin-left: 10px;
+}
+.element {
+  color: #331bcf;
 }

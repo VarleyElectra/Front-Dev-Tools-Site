@@ -22,25 +22,256 @@
     />
   </head>
   <body>
-    <header class="header">
-      <nav id="menu">
-        <input
-          type="checkbox"
-          id="responsive-menu"
-          onclick="updatemenu()"
-        /><label></label>
-        <ul id="menu__ul">
-          <li id="menu__dropdown">
-            <a class="dropdown-arrow" href="#">
-              <div class="header__burger__container">
-                <div class="header__burger__container1">
-                  <div class="header__burger__item"></div>
-                  <div class="header__burger__item"></div>
-                  <div class="header__burger__item"></div>
+    <div id="app">
+      <header class="header">
+        <nav id="menu">
+          <input
+            type="checkbox"
+            id="responsive-menu"
+            onclick="updatemenu()"
+          /><label></label>
+          <ul id="menu__ul">
+            <li id="menu__dropdown">
+              <a class="dropdown-arrow" href="#">
+                <div class="header__burger__container">
+                  <div class="header__burger__container1">
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                  </div>
                 </div>
+              </a>
+              <ul class="sub-menus">
+                <li><a href="grid.html">CSS Grid Generator</a></li>
+                <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+                <li><a href="shadow.html">Box-Shadow Generator</a></li>
+                <li><a href="filter.html">CSS-Filters Generator</a></li>
+                <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+                <li><a href="text.html">Text Generator</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div id="header__container">
+            <div id="header__name">
+              <a id="header__link1" href="index.html">Front Dev</a>
+              <a id="header__link2" href="index.html">Tools</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+  
+      <main>
+        <div class="main__header">
+          <h1>CSS-Gradient Генератор</h1>
+        </div>
+        <div class="main__container">
+          <div class="main__working-area">
+            <div class="main__grid-container">
+              <p>Рабочая область</p>
+              <div class="main__working-area__flex">
+                <div class="working-area__cell" 
+                v-bind:style="{'background': gradientStringCSS}"></div>
               </div>
-            </a>
-            <ul class="sub-menus">
+            </div>
+          </div>
+          <div class="main__grid-settings-container">
+            <div class="main__grid-settings">
+    
+              <h2>Настройки</h2>
+  
+                <div class="gradient-direction__container">
+                  <span>
+                    Направление
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Позволяет задать направление градиента в градусах.</span>
+                    </div>
+                  </span>
+                  <div class="gradient-direction__grid" >
+                    <div class="gradient-direction__item" id="gradient-direction__item__1" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__2" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__3" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__4" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__5" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__6" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__7" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                    <div class="gradient-direction__item" id="gradient-direction__item__8" v-on:click="changeGradientDirection($event)">
+                      <img src="images/arrow-main.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="flexbox-item__content" id="flexbox-item__content__select">
+  
+                  <div class="flexbox-item__div1">
+                    gradient-type
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Позволяет задать тип градиента.<br>
+                        linear-gradient - переход между цветами вдоль прямой линии <br>
+                        radial-gradient-circle - переход между цветами, которые исходят от точки. Имеет форму окружности. <br>
+                        radial-gradient-ellipse - переход между цветами, которые исходят от точки. Имеет форму эллипса. <br>
+                        conic-gradient -  создает изображение, состоящее из градиента с цветовыми переходами, поворачивающимися вокруг центральной точки (а не от центра). <br>
+                       </span>
+                    </div>
+                  </div>
+      
+                  <div class="flexbox-item__div2">
+                    <p class="contol" id="first-control">
+                      <span class="select">
+                        <select aria-label="Grid Template Columns" v-on:change="checkGradientType" id="gradientType" v-model="gradientType">
+                          <option value="linear-gradient">linear-gradient</option>
+                          <option value="repeating-linear-gradient">repeating-linear-gradient</option>
+                          <option value="radial-gradient">radial-gradient</option>
+                          <option value="repeating-radial-gradient">repeating-radial-gradient</option>
+                          <option value="conic-gradient">conic-gradient</option>
+                          <option value="repeating-conic-gradient">repeating-conic-gradient</option>
+                        </select>
+                      </span>
+                    </p>
+                  </div>
+      
+                </div>
+  
+                <!-- НЕ УДАЛЯТЬ-->
+                <div class="flexbox-item__content" id="flexbox-item__content__select" v-if="gradientPositionShow">
+  
+                  <div class="flexbox-item__div1">
+                    gradient-position
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Позволяет задать расположение начальной точки градиента<br>
+                       </span>
+                    </div>
+                  </div>
+      
+                  <div class="flexbox-item__div2">
+                    <p class="contol" id="first-control">
+                      <span class="select">
+                        <select aria-label="Grid Template Columns" v-model="gradientPositionValue">
+                          <option value="top left">top left</option>
+                          <option value="top">top</option>
+                          <option value="top right">top right</option>
+                          <option value="left">left</option>
+                          <option value="center">center</option>
+                          <option value="right">right</option>
+                          <option value="bottom left">bottom left</option>
+                          <option value="bottom">bottom</option>
+                          <option value="bottom right">bottom right</option>
+                        </select>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="gradient-settings__grid-container" 
+                v-for="(color, index) in gradientColors">
+                  <div class="delete-button-container">
+                    <p class="control">
+                      <button aria-label="Delete property" class="delete-button" v-bind:id=`delete-button__${index}` v-on:click="deleteColor($event)">
+                        <span class="delete-button__icon">
+                          <i aria-hidden="true" class="fa fa-times"></i>
+                        </span>
+                      </button>
+                    </p>
+                  </div>
+                  <div class="gradient-settings__item1">
+                    <div class="settings__grid-text">
+                      цвет №{{ index + 1 }}
+                     </div>
+                  </div>
+                  <div class="gradient-settings__item2">
+                    <p class="control">
+                      <input type="number" min="0" max="100" 
+                      v-model="gradientValues[index]"
+                      >
+                    </p>
+                  </div>
+                  <div class="gradient-settings__item3">
+                    <p class="control">
+                      <input type="color" v-model="gradientColors[index]" 
+                      >
+                    </p>
+                  </div>
+                  <div class="gradient-settings__item4">
+                    <p class="control">
+                      <input type="range" min="0" max="100" 
+                      v-model="gradientValues[index]"
+                      class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+         
+              <div class="add-new-element-button-container">
+                <button class="add-new-element-button" v-on:click="addNewColor">
+                  <span class="add-icon">
+                    <i class="fa fa-plus"></i>
+                  </span>
+                  <span>Добавить цвет</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="main__code-fields">
+          <div class="code-fields html-field">
+            <p class="code-fields__name">HTML-код</p>
+            <div class="code-fields__container">
+              <div class="code-fields__content" id="html__content">
+                <pre><code><span class="element">&lt;div</span> id="fdt-background"<span class="element">&gt;</span>
+
+<span class="element">&lt;div/&gt;</span></code></pre>
+              </div>
+            </div>
+            <button class="code-fields__button" v-on:click="copyText('#html__content')">Копировать</button>
+          </div>
+
+          <div class="code-fields css-field">
+            <p class="code-fields__name">CSS-код</p>
+            <div class="code-fields__container">
+              <div class="code-fields__content" id="css__content">
+                <pre><code><span class="element">#fdt-background {</span>
+<span class="textArea">background: {{ gradientStringCSS }};</span>
+<span class="element">}</span>
+                      </code>
+                  </pre> 
+
+              </div>
+            </div>
+            <button class="code-fields__button" v-on:click="copyText('#css__content')">Копировать</button>
+          </div>
+        </div>
+      </main>
+      <p>{{ gradientStringCSSChange() }}</p>
+      <footer>
+        <div class="footer__top-container"></div>
+  
+        <div class="footer__bottom-container">
+          <div class="footer__row">
+            <h2>О Front Dev Tools</h2>
+            <p>
+              Сайт Front Dev Tools содержит различные инструменты для генерации
+              кода с помощью удобного графического интерфейса. Такие инструменты
+              экономят время разработчикам, а новички в области
+              frontend-разработки смогут наглядным способом ознакомиться с тем,
+              как работают различные инструменты frontend-разработки.
+            </p>
+          </div>
+  
+          <div class="footer__row">
+            <h2>Навигация</h2>
+            <ul>
               <li><a href="grid.html">CSS Grid Generator</a></li>
               <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
               <li><a href="shadow.html">Box-Shadow Generator</a></li>
@@ -48,287 +279,164 @@
               <li><a href="gradient.html">CSS-Gradient Generator</a></li>
               <li><a href="text.html">Text Generator</a></li>
             </ul>
-          </li>
-        </ul>
-        <div id="header__container">
-          <div id="header__name">
-            <a id="header__link1" href="index.html">Front Dev</a>
-            <a id="header__link2" href="index.html">Tools</a>
           </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="main__header">
-        <h1>CSS-Gradient Генератор</h1>
-      </div>
-      <div class="main__container">
-        <div class="main__working-area">
-          <div class="main__grid-container">
-            <p>Рабочая область</p>
-            <div class="main__working-area__flex">
-              <div class="working-area__cell"></div>
-            </div>
-          </div>
-        </div>
-        <div class="main__grid-settings-container">
-          <div class="main__grid-settings">
   
-            <h2>Настройки</h2>
-  
-              <!-- <div class="delete-button-container">
-                <p class="control">
-                  <button aria-label="Delete property" class="delete-button">
-                    <span class="delete-button__icon">
-                      <i aria-hidden="true" class="fa fa-times"></i>
-                    </span>
-                  </button>
-                </p>
-              </div> -->
-              <div class="gradient-direction__container">
-                <span>
-                  Направление
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Позволяет задать направление градиента в градусах.</span>
-                  </div>
-                </span>
-                <div class="gradient-direction__grid">
-                  <div class="gradient-direction__item" id="gradient-direction__item__1">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__2">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__3">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__4">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__5">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__6">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__7">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                  <div class="gradient-direction__item" id="gradient-direction__item__8">
-                    <img src="images/arrow-main.svg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="flexbox-item__content" id="flexbox-item__content__select">
-
-                <div class="flexbox-item__div1">
-                  gradient-type
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Позволяет задать тип градиента.<br>
-                      linear-gradient - переход между цветами вдоль прямой линии <br>
-                      radial-gradient-circle - переход между цветами, которые исходят от точки. Имеет форму окружности. <br>
-                      radial-gradient-ellipse - переход между цветами, которые исходят от точки. Имеет форму эллипса. <br>
-                      conic-gradient -  создает изображение, состоящее из градиента с цветовыми переходами, поворачивающимися вокруг центральной точки (а не от центра). <br>
-                     </span>
-                  </div>
-                </div>
-    
-                <div class="flexbox-item__div2">
-                  <p class="contol" id="first-control">
-                    <span class="select">
-                      <select aria-label="Grid Template Columns">
-                        <option value="linear-gradient">linear-gradient</option>
-                        <option value="radial-gradient-circle">radial-gradient-circle</option>
-                        <option value="radial-gradient-ellipse">radial-gradient-ellipse</option>
-                        <option value="conic-gradient">conic-gradient</option>
-                      </select>
-                    </span>
-                  </p>
-                </div>
-    
-              </div>
-
-              <!-- НЕ УДАЛЯТЬ-->
-              <!-- <div class="flexbox-item__content" id="flexbox-item__content__select">
-
-                <div class="flexbox-item__div1">
-                  gradient-position
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Позволяет задать расположение начальной точки градиента<br>
-                     </span>
-                  </div>
-                </div>
-    
-                <div class="flexbox-item__div2">
-                  <p class="contol" id="first-control">
-                    <span class="select">
-                      <select aria-label="Grid Template Columns">
-                        <option value="1">top left</option>
-                        <option value="2">top</option>
-                        <option value="3">top-right</option>
-                        <option value="4">left</option>
-                        <option value="5">center</option>
-                        <option value="6">right</option>
-                        <option value="7">bottom left</option>
-                        <option value="8">bottom</option>
-                        <option value="9">bottom-right</option>
-                      </select>
-                    </span>
-                  </p>
-                </div>
-              </div> -->
-
-              <div class="gradient-settings__grid-container">
-                <div class="delete-button-container">
-                  <p class="control">
-                    <button aria-label="Delete property" class="delete-button">
-                      <span class="delete-button__icon">
-                        <i aria-hidden="true" class="fa fa-times"></i>
-                      </span>
-                    </button>
-                  </p>
-                </div>
-                <div class="gradient-settings__item1">
-                  <div class="settings__grid-text">
-                    цвет №1
-                   </div>
-                </div>
-                <div class="gradient-settings__item2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="0">
-                  </p>
-                </div>
-                <div class="gradient-settings__item3">
-                  <p class="control">
-                    <input type="color" value="#0f46e8">
-                  </p>
-                </div>
-                <div class="gradient-settings__item4">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-
-              <div class="gradient-settings__grid-container">
-                <div class="delete-button-container">
-                  <p class="control">
-                    <button aria-label="Delete property" class="delete-button">
-                      <span class="delete-button__icon">
-                        <i aria-hidden="true" class="fa fa-times"></i>
-                      </span>
-                    </button>
-                  </p>
-                </div>
-                <div class="gradient-settings__item1">
-                  <div class="settings__grid-text">
-                    цвет №2
-                   </div>
-                </div>
-                <div class="gradient-settings__item2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="0">
-                  </p>
-                </div>
-                <div class="gradient-settings__item3">
-                  <p class="control" >
-                    <input type="color" value="#f00b00">
-                  </p>
-                </div>
-                <div class="gradient-settings__item4">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              
-       
-            <div class="add-new-element-button-container">
-              <button class="add-new-element-button">
-                <span class="add-icon">
-                  <i class="fa fa-plus"></i>
-                </span>
-                <span>Добавить цвет</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="main__code-fields">
-        <div class="code-fields html-field">
-          <p class="code-fields__name">HTML-код</p>
-          <div class="code-fields__container">
-            <div class="code-fields__content"></div>
-          </div>
-          <button class="code-fields__button">Копировать</button>
-        </div>
-        <div class="code-fields css-field">
-          <p class="code-fields__name">CSS-код</p>
-          <div class="code-fields__container">
-            <div class="code-fields__content">
-  
-            </div>
-          </div>
-          <button class="code-fields__button">Копировать</button>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer__top-container"></div>
-
-      <div class="footer__bottom-container">
-        <div class="footer__row">
-          <h2>О Front Dev Tools</h2>
-          <p>
-            Сайт Front Dev Tools содержит различные инструменты для генерации
-            кода с помощью удобного графического интерфейса. Такие инструменты
-            экономят время разработчикам, а новички в области
-            frontend-разработки смогут наглядным способом ознакомиться с тем,
-            как работают различные инструменты frontend-разработки.
-          </p>
-        </div>
-
-        <div class="footer__row">
-          <h2>Навигация</h2>
-          <ul>
-            <li><a href="grid.html">CSS Grid Generator</a></li>
-            <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
-            <li><a href="shadow.html">Box-Shadow Generator</a></li>
-            <li><a href="filter.html">CSS-Filters Generator</a></li>
-            <li><a href="gradient.html">CSS-Gradient Generator</a></li>
-            <li><a href="text.html">Text Generator</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__row">
-          <h2>Ссылки</h2>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="https://vk.com/varley_electra" target="_blank"
-                ><img src="images/vk.svg" alt="Ссылка на VK"
-              /></a>
-            </li>
-            <li class="social-links__item">
-              <a
-                href="https://www.instagram.com/varley.electra/"
-                target="_blank"
-                ><img src="images/instagram.svg" alt="Ссылка на Instagram"
-              /></a>
-            </li>
-            <li class="social-links__item">
-              <a href="https://github.com/VarleyElectra"
-                ><img
-                  src="images/github.svg"
-                  alt="Ссылка на Github"
+          <div class="footer__row">
+            <h2>Ссылки</h2>
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="https://vk.com/varley_electra" target="_blank"
+                  ><img src="images/vk.svg" alt="Ссылка на VK"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a
+                  href="https://www.instagram.com/varley.electra/"
                   target="_blank"
-              /></a>
-            </li>
-          </ul>
+                  ><img src="images/instagram.svg" alt="Ссылка на Instagram"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a href="https://github.com/VarleyElectra"
+                  ><img
+                    src="images/github.svg"
+                    alt="Ссылка на Github"
+                    target="_blank"
+                /></a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const vueApp = Vue.createApp({
+        data() {
+          return {
+            gradientDirectionValue: "45",
+            gradientType: "linear-gradient",
+            gradientPositionShow: false,
+            gradientPositionValue: "center",
+            gradientValues: [
+            "0",
+            "25",
+            ],
+            gradientColors: [
+            "#0f46e8",
+            "#f00b00",
+            ],
+            gradientStringCSS: "linear-gradient(45deg, #0f46e8, #f00b00)",
+            showString: false,
+          }
+        },
+
+        methods: {
+          checkGradientType() {
+            let select = document.querySelector('#gradientType');
+            if (select.value === "radial-gradient" || select.value === "conic-gradient" ||select.value === "repeating-linear-gradient" || select.value === "repeating-conic-gradient") {
+              this.gradientPositionShow = true;
+            } else {
+              this.gradientPositionShow = false;
+            }
+          },
+
+          changeGradientDirection(event) {
+            let id = event.currentTarget.id;
+            let reg = /\d+/;
+            let matchValue = id.match(reg);
+            let number = Number(matchValue[0]);
+            switch (number) {
+              case 1:
+                this.gradientDirectionValue = "315";
+                break;
+              case 2:
+                this.gradientDirectionValue = "0";
+                break;
+              case 3:
+                this.gradientDirectionValue = "45";
+                break;
+              case 4:
+                this.gradientDirectionValue = "270";
+                break;
+              case 5:
+                this.gradientDirectionValue = "90";
+                break;
+              case 6:
+                this.gradientDirectionValue = "135";
+                break;
+              case 7:
+                this.gradientDirectionValue = "180";
+                break;
+              case 8:
+                this.gradientDirectionValue = "225";
+                break;
+              default:
+                break;
+            }
+          },
+
+          gradientStringCSSChange() {
+            
+            let gradients = this.gradientColors.reduce((accumulator, currentValue) =>  accumulator + `${currentValue},` , "");
+
+            let colors = gradients.split(',');
+            colors.pop();
+            let settings = colors.map((el, index) => `${el} ${this.gradientValues[index]}%`).join(', ');
+
+            switch (this.gradientType) {
+              case "linear-gradient":
+                this.gradientStringCSS = `${this.gradientType}(${this.gradientDirectionValue}deg, ${settings})`;
+                break;
+              case "repeating-linear-gradient":
+                this.gradientStringCSS = `${this.gradientType}(${this.gradientDirectionValue}deg, ${settings})`;
+                break;
+              case "radial-gradient": 
+                this.gradientStringCSS = `${this.gradientType}(circle at ${this.gradientPositionValue}, ${settings})`;
+                break;
+              case "repeating-radial-gradient": 
+                this.gradientStringCSS = `${this.gradientType}(circle at ${this.gradientPositionValue}, ${settings})`;
+                break;
+              case "conic-gradient": 
+                this.gradientStringCSS = `${this.gradientType}(${settings})`;
+                break;
+              case "repeating-conic-gradient": 
+                this.gradientStringCSS = `${this.gradientType}(${settings})`;
+                break;
+              default:
+                break;
+            }
+            
+            return "";
+          },
+
+          addNewColor() {
+            let randomColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+            let randomValue =  `${Math.round(Math.random() * 100)}`;
+            this.gradientColors.push(randomColor);
+            this.gradientValues.push(randomValue);
+          },
+
+          deleteColor(event) {
+            let id = event.currentTarget.id;
+            let reg = /\d+/;
+            let matchValue = id.match(reg);
+            let number = Number(matchValue[0]);
+            this.gradientColors.splice(number, 1);
+            this.gradientValues.splice(number, 1);
+          },
+
+          copyText(selector) {
+            let text = document.querySelector(`${selector}`);
+            let range = document.createRange();
+            range.selectNode(text); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+          },
+        },
+
+      }).mount('#app');
+    </script>
   </body>
 </html>
