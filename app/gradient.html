@@ -419,7 +419,7 @@
 
           deleteColor(event) {
             let id = event.currentTarget.id;
-            let reg = /\d+/;
+            let reg = /\d+/; // Ищет числа в строке
             let matchValue = id.match(reg);
             let number = Number(matchValue[0]);
             this.gradientColors.splice(number, 1);
