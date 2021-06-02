@@ -22,25 +22,323 @@
   />
   </head>
   <body>
-    <header class="header">
-      <nav id="menu">
-        <input
-          type="checkbox"
-          id="responsive-menu"
-          onclick="updatemenu()"
-        /><label></label>
-        <ul id="menu__ul">
-          <li id="menu__dropdown">
-            <a class="dropdown-arrow" href="#">
-              <div class="header__burger__container">
-                <div class="header__burger__container1">
-                  <div class="header__burger__item"></div>
-                  <div class="header__burger__item"></div>
-                  <div class="header__burger__item"></div>
+    <div id="app">
+      <header class="header">
+        <nav id="menu">
+          <input
+            type="checkbox"
+            id="responsive-menu"
+            onclick="updatemenu()"
+          /><label></label>
+          <ul id="menu__ul">
+            <li id="menu__dropdown">
+              <a class="dropdown-arrow" href="#">
+                <div class="header__burger__container">
+                  <div class="header__burger__container1">
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                    <div class="header__burger__item"></div>
+                  </div>
+                </div>
+              </a>
+              <ul class="sub-menus">
+                <li><a href="grid.html">CSS Grid Generator</a></li>
+                <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+                <li><a href="shadow.html">Box-Shadow Generator</a></li>
+                <li><a href="filter.html">CSS-Filters Generator</a></li>
+                <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+                <li><a href="text.html">Text Generator</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div id="header__container">
+            <div id="header__name">
+              <a id="header__link1" href="index.html">Front Dev</a>
+              <a id="header__link2" href="index.html">Tools</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+  
+      <main>
+        <div class="main__header">
+          <h1>CSS-Filters Генератор</h1>
+        </div>
+        <div class="main__container">
+          <div class="main__working-area">
+            <div class="main__grid-container">
+              <p>Рабочая область</p>
+              <div class="upload-image__container">
+                <label for="myfile" class="upload-image__label"><i class="fas fa-cloud-download-alt"></i>Загрузить изображение</label>
+                
+                <input type="file" class="upload-image__input" id="myfile" name="myfile" multiple="multiple" v-on:change="loadFile($event)"/>
+              </div>
+              <div class="main__working-area__flex">
+                <div class="working-area__cell" >
+                  <figure id="myFigure" v-bind:style="{'filter': filterStringCSS}">
+                    <img src="images/filter-image.jpg" alt="your image" id="myImage">
+                  </figure>
+                  
                 </div>
               </div>
-            </a>
-            <ul class="sub-menus">
+            </div>
+          </div>
+          <div class="main__grid-settings-container">
+            <div class="main__grid-settings">
+    
+              <h2>Настройки</h2>
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                   blur
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Размытие. Применяет к изображению размытие по Гауссу. Значение определяет значение стандартного отклонения функции Гаусса или количество пикселей на экране, сливающихся друг с другом, поэтому большее значение приведет к большему размытию. Если параметр не указан, используется значение 0. Параметр указывается как длина CSS, но не принимает процентные значения.</span>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="flexbox-item__div2">
+                  <p class="control" >
+                    <input type="number" min="0" max="10" v-model="filterBlur" class="input__percent-value">
+                    <span>px</span>
+                  </p>
+                </div>
+  
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="range" min="0" max="10" v-model="filterBlur" class="control__range-input">
+                  </p>
+                </div>
+              </div> 
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                     brightness
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Яркость. Применяет линейный множитель к входному изображению, делая его более или менее ярким. Значение 0% будет создавать полностью черное изображение. Значение 100% оставляет вход без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения, превышающие сумму 100%, что обеспечивает более яркие результаты. Если параметр отсутствует, используется значение 1.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control" >
+                      <input type="number" min="0" max="200" v-model="filterBrightness" class="input__percent-value">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="200" v-model="filterBrightness" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      contrast
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Контраст. Регулирует контрастность изображения. Значение 0% будет создавать полностью черное изображение. Значение 100% оставляет изображение без изменений. Допускаются значения  выше 100%, что дает результаты с меньшим контрастом. Если параметр отсутствует, используется значение 1.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="200" v-model="filterContrast">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="200" v-model="filterContrast" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      grayscale
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Оттенок серого. Преобразует входное изображение в оттенки серого. Значение  определяет долю конверсии. Значение 100% делает изображение полностью серым. Значение 0% оставляет изображение без изменений. Значения между 0% и 100% являются линейными множителями эффекта. Если параметр  отсутствует, используется значение 0.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="100" v-model="filterGrayscale">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="100" v-model="filterGrayscale" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      hue-rotate
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Изменение цветовой гаммы. Применяет поворот оттенка к изображению. Значение определяет количество градусов вокруг цветового круга, в котором будут настраиваться входные образцы. Значение 0deg оставляет изображение без изменений. Если параметр отсутствует, используется значение 0deg. Хотя максимального значения не существует, эффект от приведенных выше значений 360deg повторяется.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="360" v-model="filterHueRotate">
+                      <span>deg</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="360" v-model="filterHueRotate" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      invert
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Инвертирование. Инвертирует цвета в изображении. Значение определяет долю конверсии. Значение 100% полностью инвертировано. Значение 0% оставляет изображение без изменений. Значения между 0% и 100%являются линейными множителями эффекта. Если параметр отсутствует, используется значение 0.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="100" v-model="filterInvert">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="100" v-model="filterInvert" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      opacity
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Прозрачность. Значение определяет долю конверсии. Значение 0% делает изображение полностью прозрачным. Значение 100% оставляет изображение без изменений. Значения между 0%и 100% являются линейными множителями эффекта. Если параметр отсутствует, используется значение 1. Эта функция похожа на более устоявшееся opacity свойство; разница в том, что с фильтрами некоторые браузеры обеспечивают аппаратное ускорение для повышения производительности.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="100" v-model="filterOpacity">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" step="0.005" min="0" max="100" v-model="filterOpacity" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      saturate
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Насыщенность. Определяет интенсивность тонов в изображении. Значение определяет долю конверсии. Значение 0% делает изображение полностью ненасыщенным. Значение 100% оставляет изображение без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения суммы выше 100%, что обеспечивает сверхнасыщенные результаты. Если параметр отсутствует, используется значение 1.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="200" v-model="filterSaturate">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="200" v-model="filterSaturate" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                      sepia
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Сепия. Определяет иммитацию обработки изображения сепией. Значение определяет долю конверсии. Значение 0% делает изображение полностью ненасыщенным. Значение 100% оставляет изображение без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения суммы выше 100%, что обеспечивает сверхнасыщенные результаты. Если параметр отсутствует, используется значение 1.</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flexbox-item__div2">
+                    <p class="control">
+                      <input type="number" min="0" max="100" v-model="filterSepia">
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="100" v-model="filterSepia" class="control__range-input">
+                    </p>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+    
+        <div class="main__code-fields">
+          <div class="code-fields html-field">
+            <p class="code-fields__name">HTML-код</p>
+            <div class="code-fields__container">
+              <div class="code-fields__content"></div>
+            </div>
+            <button class="code-fields__button">Копировать</button>
+          </div>
+          <div class="code-fields css-field">
+            <p class="code-fields__name">CSS-код</p>
+            <div class="code-fields__container">
+              <div class="code-fields__content">
+    
+              </div>
+            </div>
+            <button class="code-fields__button">Копировать</button>
+          </div>
+        </div>
+        <p>{{ filterStringCSSChange() }}</p>
+      </main>
+  
+      <footer>
+        <div class="footer__top-container"></div>
+  
+        <div class="footer__bottom-container">
+          <div class="footer__row">
+            <h2>О Front Dev Tools</h2>
+            <p>
+              Сайт Front Dev Tools содержит различные инструменты для генерации
+              кода с помощью удобного графического интерфейса. Такие инструменты
+              экономят время разработчикам, а новички в области
+              frontend-разработки смогут наглядным способом ознакомиться с тем,
+              как работают различные инструменты frontend-разработки.
+            </p>
+          </div>
+  
+          <div class="footer__row">
+            <h2>Навигация</h2>
+            <ul>
               <li><a href="grid.html">CSS Grid Generator</a></li>
               <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
               <li><a href="shadow.html">Box-Shadow Generator</a></li>
@@ -48,327 +346,67 @@
               <li><a href="gradient.html">CSS-Gradient Generator</a></li>
               <li><a href="text.html">Text Generator</a></li>
             </ul>
-          </li>
-        </ul>
-        <div id="header__container">
-          <div id="header__name">
-            <a id="header__link1" href="index.html">Front Dev</a>
-            <a id="header__link2" href="index.html">Tools</a>
           </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="main__header">
-        <h1>CSS-Filters Генератор</h1>
-      </div>
-      <div class="main__container">
-        <div class="main__working-area">
-          <div class="main__grid-container">
-            <p>Рабочая область</p>
-            <div class="upload-image__container">
-              <label for="myfile" class="upload-image__label"><i class="fas fa-cloud-download-alt"></i>Загрузить изображение</label>
-              
-              <input type="file" class="upload-image__input" id="myfile" name="myfile" multiple="multiple"/>
-            </div>
-            <div class="main__working-area__flex">
-              <div class="working-area__cell">
-                <img src="images/filter-image.jpg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="main__grid-settings-container">
-          <div class="main__grid-settings">
   
-            <h2>Настройки</h2>
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                 blur
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Размытие. Применяет к изображению размытие по Гауссу. Значение определяет значение стандартного отклонения функции Гаусса или количество пикселей на экране, сливающихся друг с другом, поэтому большее значение приведет к большему размытию. Если параметр не указан, используется значение 0. Параметр указывается как длина CSS, но не принимает процентные значения.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control" >
-                  <input type="number" min="0" max="10" value="0" class="input__percent-value">
-                  <span>px</span>
-                </p>
-              </div>
-
-              <div class="flexbox-item__div3">
-                <p class="control">
-                  <input type="range" min="0" max="10" value="0" class="control__range-input">
-                </p>
-              </div>
-            </div> 
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                   brightness
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Яркость. Применяет линейный множитель к входному изображению, делая его более или менее ярким. Значение 0% будет создавать полностью черное изображение. Значение 100% оставляет вход без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения, превышающие сумму 100%, что обеспечивает более яркие результаты. Если параметр отсутствует, используется значение 1.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control" >
-                    <input type="number" min="0" max="200" value="100" class="input__percent-value">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="200" value="100" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    contrast
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Контраст. Регулирует контрастность изображения. Значение 0% будет создавать полностью черное изображение. Значение 100% оставляет изображение без изменений. Допускаются значения  выше 100%, что дает результаты с меньшим контрастом. Если параметр отсутствует, используется значение 1.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="200" value="100">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="200" value="100" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    grayscale
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Оттенок серого. Преобразует входное изображение в оттенки серого. Значение  определяет долю конверсии. Значение 100% делает изображение полностью серым. Значение 0% оставляет изображение без изменений. Значения между 0% и 100% являются линейными множителями эффекта. Если параметр  отсутствует, используется значение 0.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="0">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    hue-rotate
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Изменение цветовой гаммы. Применяет поворот оттенка к изображению. Значение определяет количество градусов вокруг цветового круга, в котором будут настраиваться входные образцы. Значение 0deg оставляет изображение без изменений. Если параметр отсутствует, используется значение 0deg. Хотя максимального значения не существует, эффект от приведенных выше значений 360deg повторяется.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="360" value="0">
-                    <span>deg</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="360" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    invert
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Инвертирование. Инвертирует цвета в изображении. Значение определяет долю конверсии. Значение 100% полностью инвертировано. Значение 0% оставляет изображение без изменений. Значения между 0% и 100%являются линейными множителями эффекта. Если параметр отсутствует, используется значение 0.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="0">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    opacity
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Прозрачность. Значение определяет долю конверсии. Значение 0% делает изображение полностью прозрачным. Значение 100% оставляет изображение без изменений. Значения между 0%и 100% являются линейными множителями эффекта. Если параметр отсутствует, используется значение 1. Эта функция похожа на более устоявшееся opacity свойство; разница в том, что с фильтрами некоторые браузеры обеспечивают аппаратное ускорение для повышения производительности.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="100">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" step="any" min="0" max="100" value="100" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    saturate
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Насыщенность. Определяет интенсивность тонов в изображении. Значение определяет долю конверсии. Значение 0% делает изображение полностью ненасыщенным. Значение 100% оставляет изображение без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения суммы выше 100%, что обеспечивает сверхнасыщенные результаты. Если параметр отсутствует, используется значение 1.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="200" value="100">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="200" value="100" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                    sepia
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Сепия. Определяет иммитацию обработки изображения сепией. Значение определяет долю конверсии. Значение 0% делает изображение полностью ненасыщенным. Значение 100% оставляет изображение без изменений. Остальные значения являются линейными множителями эффекта. Допускаются значения суммы выше 100%, что обеспечивает сверхнасыщенные результаты. Если параметр отсутствует, используется значение 1.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flexbox-item__div2">
-                  <p class="control">
-                    <input type="number" min="0" max="100" value="0">
-                    <span>%</span>
-                  </p>
-                </div>
-
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="100" value="0" class="control__range-input">
-                  </p>
-                </div>
-              </div>
-              
-          </div>
-        </div>
-      </div>
-  
-      <div class="main__code-fields">
-        <div class="code-fields html-field">
-          <p class="code-fields__name">HTML-код</p>
-          <div class="code-fields__container">
-            <div class="code-fields__content"></div>
-          </div>
-          <button class="code-fields__button">Копировать</button>
-        </div>
-        <div class="code-fields css-field">
-          <p class="code-fields__name">CSS-код</p>
-          <div class="code-fields__container">
-            <div class="code-fields__content">
-  
-            </div>
-          </div>
-          <button class="code-fields__button">Копировать</button>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer__top-container"></div>
-
-      <div class="footer__bottom-container">
-        <div class="footer__row">
-          <h2>О Front Dev Tools</h2>
-          <p>
-            Сайт Front Dev Tools содержит различные инструменты для генерации
-            кода с помощью удобного графического интерфейса. Такие инструменты
-            экономят время разработчикам, а новички в области
-            frontend-разработки смогут наглядным способом ознакомиться с тем,
-            как работают различные инструменты frontend-разработки.
-          </p>
-        </div>
-
-        <div class="footer__row">
-          <h2>Навигация</h2>
-          <ul>
-            <li><a href="grid.html">CSS Grid Generator</a></li>
-            <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
-            <li><a href="shadow.html">Box-Shadow Generator</a></li>
-            <li><a href="filter.html">CSS-Filters Generator</a></li>
-            <li><a href="gradient.html">CSS-Gradient Generator</a></li>
-            <li><a href="text.html">Text Generator</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__row">
-          <h2>Ссылки</h2>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="https://vk.com/varley_electra" target="_blank"
-                ><img src="images/vk.svg" alt="Ссылка на VK"
-              /></a>
-            </li>
-            <li class="social-links__item">
-              <a
-                href="https://www.instagram.com/varley.electra/"
-                target="_blank"
-                ><img src="images/instagram.svg" alt="Ссылка на Instagram"
-              /></a>
-            </li>
-            <li class="social-links__item">
-              <a href="https://github.com/VarleyElectra"
-                ><img
-                  src="images/github.svg"
-                  alt="Ссылка на Github"
+          <div class="footer__row">
+            <h2>Ссылки</h2>
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="https://vk.com/varley_electra" target="_blank"
+                  ><img src="images/vk.svg" alt="Ссылка на VK"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a
+                  href="https://www.instagram.com/varley.electra/"
                   target="_blank"
-              /></a>
-            </li>
-          </ul>
+                  ><img src="images/instagram.svg" alt="Ссылка на Instagram"
+                /></a>
+              </li>
+              <li class="social-links__item">
+                <a href="https://github.com/VarleyElectra"
+                  ><img
+                    src="images/github.svg"
+                    alt="Ссылка на Github"
+                    target="_blank"
+                /></a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const vueApp = Vue.createApp({
+        data() {
+          return {
+            filterBlur: "0",
+            filterBrightness: "100",
+            filterContrast: "100",
+            filterGrayscale: "0",
+            filterHueRotate: "0",
+            filterInvert: "0",
+            filterOpacity: "100",
+            filterSaturate: "100",
+            filterSepia: "0",
+            filterStringCSS: "",
+          }
+        },
+
+        methods: {
+          loadFile(event) {
+            let image = document.getElementById('myImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+          },
+
+          filterStringCSSChange() {
+            this.filterStringCSS = `blur(${this.filterBlur}px) brightness(${this.filterBrightness}%) contrast(${this.filterContrast}%) grayscale(${this.filterGrayscale}%) hue-rotate(${this.filterHueRotate}deg) invert(${this.filterInvert}%) opacity(${this.filterOpacity}%) saturate(${this.filterSaturate}%) sepia(${this.filterSepia}%)`
+            // this.elementImage.style.filter = this.filterStringCSS;
+            return ""
+          }
+        }
+      }).mount('#app');
+    </script>
   </body>
 </html>
