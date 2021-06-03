@@ -19,21 +19,367 @@
 </head>
 
 <body>
-  <header class="header">
-    <nav id="menu">
-      <input type="checkbox" id="responsive-menu" onclick="updatemenu()" /><label></label>
-      <ul id="menu__ul">
-        <li id="menu__dropdown">
-          <a class="dropdown-arrow" href="#">
-            <div class="header__burger__container">
-              <div class="header__burger__container1">
-                <div class="header__burger__item"></div>
-                <div class="header__burger__item"></div>
-                <div class="header__burger__item"></div>
+  <div id="app">
+    <header class="header">
+      <nav id="menu">
+        <input type="checkbox" id="responsive-menu" onclick="updatemenu()" /><label></label>
+        <ul id="menu__ul">
+          <li id="menu__dropdown">
+            <a class="dropdown-arrow" href="#">
+              <div class="header__burger__container">
+                <div class="header__burger__container1">
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
+                  <div class="header__burger__item"></div>
+                </div>
+              </div>
+            </a>
+            <ul class="sub-menus">
+              <li><a href="grid.html">CSS Grid Generator</a></li>
+              <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
+              <li><a href="shadow.html">Box-Shadow Generator</a></li>
+              <li><a href="filter.html">CSS-Filters Generator</a></li>
+              <li><a href="gradient.html">CSS-Gradient Generator</a></li>
+              <li><a href="text.html">Text Generator</a></li>
+            </ul>
+          </li>
+  
+        </ul>
+  
+        <div id="header__container">
+          <div id="header__name">
+            <a id="header__link1" href="index.html">Front Dev</a>
+            <a id="header__link2" href="index.html">Tools</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  
+    <main>
+      <div class="main__header">
+        <h1>CSS-Flexbox Генератор</h1>
+      </div>
+      <div class="main__container">
+        <div class="main__working-area">
+          <div class="main__grid-container">
+            <p>Рабочая область</p>
+            <div class="main__working-area__flex" v-bind:style="{ 'flex-direction': flexDirection, 'flex-wrap': flexWrap, 'justify-content': justifyContent, 'align-items': alignItems, 'align-content': alignContent}">
+              <div class="working-area__cell" v-for="(flexItem, index) in flexBoxesArray" v-bind:style="{'order': flexItem[0], 'flex-grow': flexItem[1], 'flex-shrink': flexItem[2], 'flex-basis': flexItem[3], 'align-self': flexItem[4]}">{{ index + 1 }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="main__grid-settings-container">
+          <div class="main__grid-settings">
+  
+            <h2>Настройки</h2>
+  
+  
+            <div class="settings__grid">
+  
+              <div class="settings__grid-text div1">
+                flex-direction
+                <div class="tooltip tooltip-settings">&#x2754
+                  <span class="tooltiptext">flex-direction - CSS свойство, указывающее на то, как flex-элементы
+                    располагаются во flex-контейнере по главной оси и направлению (normal или reversed).</span>
+                </div>
+              </div>
+  
+              <div class="control__container div2">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="flexDirection">
+                      <option value="row">row</option>
+                      <option value="row-reverse">row-reverse</option>
+                      <option value="column">column</option>
+                      <option value="column-reverse">column-reverse</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+  
+            <div class="settings__grid">
+  
+              <div class="settings__grid-text div1">
+                flex-wrap
+                <div class="tooltip tooltip-settings">&#x2754
+                  <span class="tooltiptext">Свойство CSS flex-wrap задаёт правила вывода flex-элементов — в одну строку
+                    или в несколько, с переносом блоков. Если перенос разрешён, то возможно задать направление, в котором
+                    выводятся блоки.</span>
+                </div>
+              </div>
+  
+              <div class="control__container div2">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="flexWrap">
+                      <option value="wrap">wrap</option>
+                      <option value="nowrap">nowrap</option>
+                      <option value="wrap-reverse">wrap-reverse</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+  
+            <div class="settings__grid">
+  
+              <div class="settings__grid-text div1">
+                justify-content
+                <div class="tooltip tooltip-settings">&#x2754
+                  <span class="tooltiptext">CSS свойство justify-content определяет, как браузер распределяет пространство
+                    между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid
+                    контейнера.</span>
+                </div>
+              </div>
+              <div class="control__container div2">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="justifyContent">
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">space-between</option>
+                      <option value="space-around">space-around</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+  
+            <div class="settings__grid">
+  
+              <div class="settings__grid-text div1">
+                align-content
+                <div class="tooltip tooltip-settings">&#x2754
+                  <span class="tooltiptext">CSS-свойство align-content устанавливает распределение пространства между и
+                    вокруг элементами контента вдоль поперечной оси flexbox контейнера</span>
+                </div>
+              </div>
+              <div class="control__container div2">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="alignContent">
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">space-between</option>
+                      <option value="space-around">space-around</option>
+                      <option value="space-around">stretch</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+
+            <div class="settings__grid">
+  
+              <div class="settings__grid-text div1">
+                align-items
+                <div class="tooltip tooltip-settings">&#x2754
+                  <span class="tooltiptext">CSS свойство align-items выравнивает flex-элементы текущей flex-линии таким же
+                    образом, как и justify-content, но в перпендикулярном направлении.</span>
+                </div>
+              </div>
+              <div class="control__container div2">
+                <p class="contol">
+                  <span class="select">
+                    <select aria-label="Grid Template Columns" v-model="alignItems">
+                      <option value="flex-start">flex-start</option>
+                      <option value="flex-end">flex-end</option>
+                      <option value="center">center</option>
+                      <option value="space-between">baseline</option>
+                      <option value="space-around">stretch</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+  
+            
+  
+  
+            <div class="grid-settings__control-panel">
+              <div class="control-panel__container">
+                <div class="control-panel__info-field">
+                  <h2>Flexbox-элементы</h2>
+                </div>
               </div>
             </div>
-          </a>
-          <ul class="sub-menus">
+  
+  
+            <div class="flexbox-item__container" v-for="(flexItem, index) in flexBoxesArray">
+              <h3>Элемент №{{ index + 1 }}</h3>
+              <div class="delete-button-container">
+                <p class="control">
+                  <button aria-label="Delete property" class="delete-button" v-bind:id=`delete-button__${index}` v-on:click="deleteFlexItem($event)">
+                    <span class="delete-button__icon">
+                      <i aria-hidden="true" class="fa fa-times"></i>
+                    </span>
+                  </button>
+                </p>
+              </div>
+              
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    order
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="0" v-model="flexItem[0]">
+                  </p>
+                </div>
+                
+              </div>
+  
+              <div class="flexbox-item__content">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    flex
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Свойство flex: <br>
+                        flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
+                        текущему элементу<br>
+                        flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
+                        flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
+                        контент-бокса, если не задано иначе через box-sizing.</span>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="flexbox-item__div2">
+                  <p class="control">
+                    <input type="number" min="0" v-model="flexItem[1]">
+                  </p>
+                </div>
+  
+                <div class="flexbox-item__div3">
+                  <p class="control">
+                    <input type="number" min="0" v-model="flexItem[2]">
+                  </p>
+                </div>
+  
+                <div class="flexbox-item__div4">
+                  <p class="control">
+                    <input type="text" v-model="flexItem[3]" min="0" />
+                  </p>
+                </div>
+                
+              </div>
+  
+              <div class="flexbox-item__content" id="flexbox__input">
+                <div class="flexbox-item__div1">
+                  <div class="settings__grid-text">
+                    align-self
+                    <div class="tooltip tooltip-settings">&#x2754
+                      <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="flexbox-item__div2">
+                  <p class="contol" id="flexbox__control">
+                    <span class="select">
+                      <select aria-label="Grid Template Columns" v-model="flexItem[4]">
+                        <option value="auto">auto</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="baseline">baseline</option>
+                        <option value="stretch">stretch</option>
+                      </select>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="add-new-element-button-container">
+              <button class="add-new-element-button" v-on:click="addNewFlexItem">
+                <span class="add-icon">
+                  <i class="fa fa-plus"></i>
+                </span>
+                <span>Добавить элемент</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main__code-fields">
+        <div class="code-fields html-field">
+          <p class="code-fields__name">HTML-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content" id="html__content">
+<pre><code><span class="element">&lt;div</span> id="fdt-flexbox__container"<span class="element">&gt;</span>
+  <span v-for="(flexItem, index) in flexBoxesArray">
+    <span class="element">&lt;div</span> class="fdt-flexbox__item"<span class="element">&gt;</span><span class="element">&lt;div/&gt;</span>
+  </span>
+<span class="element">&lt;div/&gt;</span>
+
+</code></pre>
+            </div>
+          </div>
+          <button class="code-fields__button" v-on:click="copyText('#html__content')">Копировать</button>
+        </div>
+        
+        <div class="code-fields css-field">
+          <p class="code-fields__name">CSS-код</p>
+          <div class="code-fields__container">
+            <div class="code-fields__content" id="css__content">
+  <pre><code><span class="element">#fdt-flexbox__container {</span>
+  <span class="textArea">flex-direction: {{ flexDirection }};</span>
+  <span class="textArea">flex-wrap: {{ flexWrap }};</span>
+  <span class="textArea">justify-content: {{ justifyContent }};</span>
+  <span class="textArea">align-content: {{ alignContent }};</span>
+  <span class="textArea">align-items: {{ alignItems }};</span>
+<span class="element">}</span>
+
+<span v-for="(flexItem, index) in flexBoxesArray">
+<span class="element">.fdt-flexbox__item:nth-child({{ index + 1 }}) {</span>
+  <span class="textArea">order: {{ flexItem[0] }};</span>
+  <span class="textArea">flex: {{ flexItem[1] }} {{ flexItem[2] }} {{ flexItem[3] }};</span>
+  <span class="textArea">align-self: {{ flexItem[4] }};</span>
+<span class="element">}</span>
+</span>
+                      </code>
+                  </pre> 
+            </div>
+          </div>
+          <button class="code-fields__button" v-on:click="copyText('#css__content')">Копировать</button>
+        </div>
+      </div>
+    </main>
+  
+    <footer>
+      <div class="footer__top-container"></div>
+  
+      <div class="footer__bottom-container">
+        <div class="footer__row">
+          <h2>О Front Dev Tools</h2>
+          <p>
+            Сайт Front Dev Tools содержит различные инструменты для генерации
+            кода с помощью удобного графического интерфейса. Такие инструменты
+            экономят время разработчикам, а новички в области
+            frontend-разработки смогут наглядным способом ознакомиться с тем,
+            как работают различные инструменты frontend-разработки.
+          </p>
+        </div>
+  
+        <div class="footer__row">
+          <h2>Навигация</h2>
+          <ul>
             <li><a href="grid.html">CSS Grid Generator</a></li>
             <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
             <li><a href="shadow.html">Box-Shadow Generator</a></li>
@@ -41,547 +387,71 @@
             <li><a href="gradient.html">CSS-Gradient Generator</a></li>
             <li><a href="text.html">Text Generator</a></li>
           </ul>
-        </li>
-
-      </ul>
-
-      <div id="header__container">
-        <div id="header__name">
-          <a id="header__link1" href="index.html">Front Dev</a>
-          <a id="header__link2" href="index.html">Tools</a>
+        </div>
+  
+        <div class="footer__row">
+          <h2>Ссылки</h2>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="https://vk.com/varley_electra" target="_blank"><img src="images/vk.svg" alt="Ссылка на VK" /></a>
+            </li>
+            <li class="social-links__item">
+              <a href="https://www.instagram.com/varley.electra/" target="_blank"><img src="images/instagram.svg"
+                  alt="Ссылка на Instagram" /></a>
+            </li>
+            <li class="social-links__item">
+              <a href="https://github.com/VarleyElectra"><img src="images/github.svg" alt="Ссылка на Github"
+                  target="_blank" /></a>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
-  </header>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const vueApp = Vue.createApp({
+      data() {
+        return {
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          alignContent: "flex-start",
+          flexBoxesArray: [
+            ["0", "0", "0", "auto", "auto"],
+            ["0", "0", "0", "auto", "auto"],
+            ["0", "0", "0", "auto", "auto"],
+            ["0", "0", "0", "auto", "auto"],
+          ]
+        }
+      },
 
-  <main>
-    <div class="main__header">
-      <h1>CSS-Flexbox Генератор</h1>
-    </div>
-    <div class="main__container">
-      <div class="main__working-area">
-        <div class="main__grid-container">
-          <p>Рабочая область</p>
-          <div class="main__working-area__flex">
-            <div class="working-area__cell">1</div>
-            <div class="working-area__cell">2</div>
-            <div class="working-area__cell">3</div>
-            <!-- <div class="working-area__cell">4</div> -->
-            <!-- <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div>
-            <div class="working-area__cell"></div> -->
-          </div>
-        </div>
-      </div>
-      <div class="main__grid-settings-container">
-        <div class="main__grid-settings">
+      methods: {
+        copyText(selector) {
+            let text = document.querySelector(`${selector}`);
+            let range = document.createRange();
+            range.selectNode(text); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+          },
 
-          <h2>Настройки</h2>
+          addNewFlexItem() {
+            this.flexBoxesArray.push(["0", "0", "0", "auto", "auto"])
+          },
 
+          deleteFlexItem(event) {
+            let id = event.currentTarget.id;
+            let reg = /\d+/; // Ищет числа в строке
+            let matchValue = id.match(reg);
+            let number = Number(matchValue[0]);
+            this.flexBoxesArray.splice(number, 1);
+          },
 
-          <div class="settings__grid">
-
-            <div class="settings__grid-text div1">
-              flex-direction
-              <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">flex-direction - CSS свойство, указывающее на то, как flex-элементы
-                  располагаются во flex-контейнере по главной оси и направлению (normal или reversed).</span>
-              </div>
-            </div>
-
-            <div class="control__container div2">
-              <p class="contol">
-                <span class="select">
-                  <select aria-label="Grid Template Columns">
-                    <option value="row">row</option>
-                    <option value="row-reverse">row-reverse</option>
-                    <option value="column">column</option>
-                    <option value="column-reverse">column-reverse</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-
-          </div>
-
-          <div class="settings__grid">
-
-            <div class="settings__grid-text div1">
-              flex-wrap
-              <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">Свойство CSS flex-wrap задаёт правила вывода flex-элементов — в одну строку
-                  или в несколько, с переносом блоков. Если перенос разрешён, то возможно задать направление, в котором
-                  выводятся блоки.</span>
-              </div>
-            </div>
-
-            <div class="control__container div2">
-              <p class="contol">
-                <span class="select">
-                  <select aria-label="Grid Template Columns">
-                    <option value="wrap">wrap</option>
-                    <option value="nowrap">nowrap</option>
-                    <option value="wrap-reverse">wrap-reverse</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-
-          </div>
-
-          <div class="settings__grid">
-
-            <div class="settings__grid-text div1">
-              justify-content
-              <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">CSS свойство justify-content определяет, как браузер распределяет пространство
-                  между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid
-                  контейнера.</span>
-              </div>
-            </div>
-            <div class="control__container div2">
-              <p class="contol">
-                <span class="select">
-                  <select aria-label="Grid Template Columns">
-                    <option value="flex-start">flex-start</option>
-                    <option value="flex-end">flex-end</option>
-                    <option value="center">center</option>
-                    <option value="space-between">space-between</option>
-                    <option value="space-around">space-around</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-
-          </div>
-
-          <div class="settings__grid">
-
-            <div class="settings__grid-text div1">
-              align-items
-              <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">CSS свойство align-items выравнивает flex-элементы текущей flex-линии таким же
-                  образом, как и justify-content, но в перпендикулярном направлении.</span>
-              </div>
-            </div>
-            <div class="control__container div2">
-              <p class="contol">
-                <span class="select">
-                  <select aria-label="Grid Template Columns">
-                    <option value="flex-start">flex-start</option>
-                    <option value="flex-end">flex-end</option>
-                    <option value="center">center</option>
-                    <option value="space-between">baseline</option>
-                    <option value="space-around">stretch</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-
-          </div>
-
-          <div class="settings__grid">
-
-            <div class="settings__grid-text div1">
-              align-content
-              <div class="tooltip tooltip-settings">&#x2754
-                <span class="tooltiptext">CSS-свойство align-content устанавливает распределение пространства между и
-                  вокруг элементами контента вдоль поперечной оси flexbox контейнера</span>
-              </div>
-            </div>
-            <div class="control__container div2">
-              <p class="contol">
-                <span class="select">
-                  <select aria-label="Grid Template Columns">
-                    <option value="flex-start">flex-start</option>
-                    <option value="flex-end">flex-end</option>
-                    <option value="center">center</option>
-                    <option value="space-between">space-between</option>
-                    <option value="space-around">space-around</option>
-                    <option value="space-around">stretch</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="grid-settings__control-panel">
-            <div class="control-panel__container">
-              <div class="control-panel__info-field">
-                <h2>Flexbox-элементы</h2>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="flexbox-item__container">
-            <h3>Элемент №1</h3>
-            <div class="delete-button-container">
-              <p class="control">
-                <button aria-label="Delete property" class="delete-button">
-                  <span class="delete-button__icon">
-                    <i aria-hidden="true" class="fa fa-times"></i>
-                  </span>
-                </button>
-              </p>
-            </div>
-            
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  order
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  flex
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство flex: <br>
-                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
-                      текущему элементу<br>
-                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
-                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
-                      контент-бокса, если не задано иначе через box-sizing.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div3">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div4">
-                <p class="control">
-                  <input type="text" value="auto" min="0" />
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content" id="flexbox__input">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  align-self
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="contol" id="flexbox__control">
-                  <span class="select">
-                    <select aria-label="Grid Template Columns">
-                      <option value="auto">auto</option>
-                      <option value="flex-start">flex-start</option>
-                      <option value="flex-end">flex-end</option>
-                      <option value="center">center</option>
-                      <option value="space-between">baseline</option>
-                      <option value="space-around">stretch</option>
-                    </select>
-                  </span>
-                </p>
-              </div>
-              
-            </div>
-            
-          </div>
-
-          <div class="flexbox-item__container">
-            <h3>Элемент №2</h3>
-            <div class="delete-button-container">
-              <p class="control">
-                <button aria-label="Delete property" class="delete-button">
-                  <span class="delete-button__icon">
-                    <i aria-hidden="true" class="fa fa-times"></i>
-                  </span>
-                </button>
-              </p>
-            </div>
-            
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  order
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  flex
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство flex: <br>
-                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
-                      текущему элементу<br>
-                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
-                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
-                      контент-бокса, если не задано иначе через box-sizing.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div3">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div4">
-                <p class="control">
-                  <input type="text" value="auto" min="0" />
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content" id="flexbox__input">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  align-self
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="contol" id="flexbox__control">
-                  <span class="select">
-                    <select aria-label="Grid Template Columns">
-                      <option value="auto">auto</option>
-                      <option value="flex-start">flex-start</option>
-                      <option value="flex-end">flex-end</option>
-                      <option value="center">center</option>
-                      <option value="space-between">baseline</option>
-                      <option value="space-around">stretch</option>
-                    </select>
-                  </span>
-                </p>
-              </div>
-              
-            </div>
-            
-          </div>
-
-          <div class="flexbox-item__container">
-            <h3>Элемент №3</h3>
-            <div class="delete-button-container">
-              <p class="control">
-                <button aria-label="Delete property" class="delete-button">
-                  <span class="delete-button__icon">
-                    <i aria-hidden="true" class="fa fa-times"></i>
-                  </span>
-                </button>
-              </p>
-            </div>
-            
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  order
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">CSS свойство  order определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению order. Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  flex
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство flex: <br>
-                      flex-grow: определяет как много свободного пространства во flex-контейнере должно быть назначено
-                      текущему элементу<br>
-                      flex-shrink: определяет коэффициент сжатия flex-элемента.<br>
-                      flex-basis: задаёт базовый размер флекс элемента по основной оси. Это свойство определяет размер
-                      контент-бокса, если не задано иначе через box-sizing.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div3">
-                <p class="control">
-                  <input type="number" min="0" value="0">
-                </p>
-              </div>
-
-              <div class="flexbox-item__div4">
-                <p class="control">
-                  <input type="text" value="auto" min="0" />
-                </p>
-              </div>
-              
-            </div>
-
-            <div class="flexbox-item__content" id="flexbox__input">
-              <div class="flexbox-item__div1">
-                <div class="settings__grid-text">
-                  align-self
-                  <div class="tooltip tooltip-settings">&#x2754
-                    <span class="tooltiptext">Свойство CSS align-self выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства align-items. Если у какого-либо flex-элемента margin в поперечной оси выставлен в auto, то align-self игнорируется.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flexbox-item__div2">
-                <p class="contol" id="flexbox__control">
-                  <span class="select">
-                    <select aria-label="Grid Template Columns">
-                      <option value="auto">auto</option>
-                      <option value="flex-start">flex-start</option>
-                      <option value="flex-end">flex-end</option>
-                      <option value="center">center</option>
-                      <option value="space-between">baseline</option>
-                      <option value="space-around">stretch</option>
-                    </select>
-                  </span>
-                </p>
-              </div>
-              
-            </div>
-            
-          </div>
-          
-          <div class="add-new-element-button-container">
-            <button class="add-new-element-button">
-              <span class="add-icon">
-                <i class="fa fa-plus"></i>
-              </span>
-              <span>Добавить элемент</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="main__code-fields">
-      <div class="code-fields html-field">
-        <p class="code-fields__name">HTML-код</p>
-        <div class="code-fields__container">
-          <div class="code-fields__content"></div>
-        </div>
-        <button class="code-fields__button">Копировать</button>
-      </div>
-      <div class="code-fields css-field">
-        <p class="code-fields__name">CSS-код</p>
-        <div class="code-fields__container">
-          <div class="code-fields__content">
-
-          </div>
-        </div>
-        <button class="code-fields__button">Копировать</button>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer__top-container"></div>
-
-    <div class="footer__bottom-container">
-      <div class="footer__row">
-        <h2>О Front Dev Tools</h2>
-        <p>
-          Сайт Front Dev Tools содержит различные инструменты для генерации
-          кода с помощью удобного графического интерфейса. Такие инструменты
-          экономят время разработчикам, а новички в области
-          frontend-разработки смогут наглядным способом ознакомиться с тем,
-          как работают различные инструменты frontend-разработки.
-        </p>
-      </div>
-
-      <div class="footer__row">
-        <h2>Навигация</h2>
-        <ul>
-          <li><a href="grid.html">CSS Grid Generator</a></li>
-          <li><a href="flexbox.html">CSS Flexbox Generator</a></li>
-          <li><a href="shadow.html">Box-Shadow Generator</a></li>
-          <li><a href="filter.html">CSS-Filters Generator</a></li>
-          <li><a href="gradient.html">CSS-Gradient Generator</a></li>
-          <li><a href="text.html">Text Generator</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__row">
-        <h2>Ссылки</h2>
-        <ul class="social-links">
-          <li class="social-links__item">
-            <a href="https://vk.com/varley_electra" target="_blank"><img src="images/vk.svg" alt="Ссылка на VK" /></a>
-          </li>
-          <li class="social-links__item">
-            <a href="https://www.instagram.com/varley.electra/" target="_blank"><img src="images/instagram.svg"
-                alt="Ссылка на Instagram" /></a>
-          </li>
-          <li class="social-links__item">
-            <a href="https://github.com/VarleyElectra"><img src="images/github.svg" alt="Ссылка на Github"
-                target="_blank" /></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+      }
+    }).mount('#app');
+  </script>
 </body>
 
 </html>

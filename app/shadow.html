@@ -272,8 +272,9 @@
 <span class="element">&lt;div/&gt;</span></code></pre>
               </div>
             </div>
-            <button class="code-fields__button">Копировать</button>
+            <button class="code-fields__button" v-on:click="copyText('#html__content')">Копировать</button>
           </div>
+
           <div class="code-fields css-field">
             <p class="code-fields__name">CSS-код</p>
             <div class="code-fields__container">
@@ -285,7 +286,7 @@
                   </pre> 
               </div>
             </div>
-            <button class="code-fields__button">Копировать</button>
+            <button class="code-fields__button" v-on:click="copyText('#css__content')">Копировать</button>
           </div>
         </div>
         <p>{{ shadowStringCSSChange() }}</p>
@@ -405,7 +406,16 @@
             let matchValue = id.match(reg);
             let number = Number(matchValue[0]);
             this.shadowsArr.splice(number, 1);
-          }
+          },
+
+          copyText(selector) {
+            let text = document.querySelector(`${selector}`);
+            let range = document.createRange();
+            range.selectNode(text); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+          },
         },
 
       }).mount('#app');
