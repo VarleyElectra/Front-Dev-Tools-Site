@@ -304,18 +304,26 @@
           <div class="code-fields html-field">
             <p class="code-fields__name">HTML-код</p>
             <div class="code-fields__container">
-              <div class="code-fields__content"></div>
+              <div class="code-fields__content" id="html__content">
+<pre><code><span class="element">&lt;figure</span> id="fdt-filters"<span class="element">&gt;</span>
+  <span class="element">&lt;img</span><span> src=""</span><span class="element">&gt;</span>
+<span class="element">&lt;figure/&gt;</span></code></pre>
+              </div>
             </div>
-            <button class="code-fields__button">Копировать</button>
+            <button class="code-fields__button" v-on:click="copyText('#html__content')">Копировать</button>
           </div>
           <div class="code-fields css-field">
             <p class="code-fields__name">CSS-код</p>
             <div class="code-fields__container">
-              <div class="code-fields__content">
-    
+              <div class="code-fields__content" id="css__content">
+                    <pre><code><span class="element">#fdt-filters {</span>
+  <span class="textArea">filter: {{ filterStringCSS }};</span>
+<span class="element">}</span>
+                      </code>
+                  </pre> 
               </div>
             </div>
-            <button class="code-fields__button">Копировать</button>
+            <button class="code-fields__button" v-on:click="copyText('#css__content')">Копировать</button>
           </div>
         </div>
         <p>{{ filterStringCSSChange() }}</p>
@@ -398,13 +406,31 @@
           loadFile(event) {
             let image = document.getElementById('myImage');
             image.src = URL.createObjectURL(event.target.files[0]);
+            this.filterBlur = "0";
+            this.filterBrightness = "100";
+            this.filterContrast = "100";
+            this.filterGrayscale = "0";
+            this.filterHueRotate = "0";
+            this.filterInvert = "0";
+            this.filterOpacity = "100";
+            this.filterSaturate = "100";
+            this.filterSepia = "0";
           },
 
           filterStringCSSChange() {
             this.filterStringCSS = `blur(${this.filterBlur}px) brightness(${this.filterBrightness}%) contrast(${this.filterContrast}%) grayscale(${this.filterGrayscale}%) hue-rotate(${this.filterHueRotate}deg) invert(${this.filterInvert}%) opacity(${this.filterOpacity}%) saturate(${this.filterSaturate}%) sepia(${this.filterSepia}%)`
             // this.elementImage.style.filter = this.filterStringCSS;
             return ""
-          }
+          },
+
+          copyText(selector) {
+            let text = document.querySelector(`${selector}`);
+            let range = document.createRange();
+            range.selectNode(text); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+          },
         }
       }).mount('#app');
     </script>
