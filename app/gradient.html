@@ -79,7 +79,7 @@
     
               <h2>Настройки</h2>
   
-                <div class="gradient-direction__container">
+                <div class="gradient-direction__container" v-if="gradientDirectionShow">
                   <span>
                     Направление
                     <div class="tooltip tooltip-settings">&#x2754
@@ -317,6 +317,7 @@
             gradientDirectionValue: "45",
             gradientType: "linear-gradient",
             gradientPositionShow: false,
+            gradientDirectionShow: true,
             gradientPositionValue: "center",
             gradientValues: [
             "0",
@@ -334,10 +335,15 @@
         methods: {
           checkGradientType() {
             let select = document.querySelector('#gradientType');
-            if (select.value === "radial-gradient" || select.value === "conic-gradient" ||select.value === "repeating-linear-gradient" || select.value === "repeating-conic-gradient") {
+            if (select.value === "radial-gradient" || select.value === "repeating-radial-gradient") {
               this.gradientPositionShow = true;
             } else {
               this.gradientPositionShow = false;
+            }
+            if (select.value === "linear-gradient" || select.value === "repeating-linear-gradient") {
+              this.gradientDirectionShow = true;
+            } else {
+              this.gradientDirectionShow = false;
             }
           },
 
