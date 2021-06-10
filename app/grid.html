@@ -20,6 +20,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link type="image/png" sizes="32x32" rel="icon" href="images/favicon.png">
   </head>
   <body>
     <div id="app">
@@ -357,6 +358,7 @@
             let columnsArrLength = Number(this.gridColumns);
             let rowsArrLength = Number(this.gridRows);
             this.col = columnsArrLength * rowsArrLength;
+
             while (this.gridTemplateColumnsArr.length != columnsArrLength) {
               if (this.gridTemplateColumnsArr.length < columnsArrLength) {
                 this.gridTemplateColumnsArr.push(["100", "px"]);
@@ -374,9 +376,10 @@
           },
 
           gridTemplateChange() {
-            
             let templateColumnString = this.gridTemplateColumnsArr.reduce((acc, val) => acc + `${val[0]}${val[1]} `, "");
+
             let templateRowString = this.gridTemplateRowsArr.reduce((acc, val) => acc + `${val[0]}${val[1]} `, "");
+            
             this.gridTemplateColumnString = templateColumnString;
             this.gridTemplateRowString = templateRowString;
           },

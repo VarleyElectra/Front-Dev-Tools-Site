@@ -20,6 +20,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link type="image/png" sizes="32x32" rel="icon" href="images/favicon.png">
   </head>
   <body>
     <div id="app">
@@ -90,7 +91,7 @@
               </div>
               <div class="font-settings__div2">
                 <p class="control">
-                  <input type="number" v-model="fontSizeValue" min="0">
+                  <input type="number" v-model="fontSizeValue" id="font-size__input">
                 </p>
               </div>
               <div class="font-settings__div3">
@@ -118,7 +119,7 @@
               </div>
               <div class="font-settings__div2">
                 <p class="control">
-                  <input type="number" v-model="lineHeightValue" min="0">
+                  <input type="number" v-model="lineHeightValue" id="line-height__input">
                 </p>
               </div>
               <div class="font-settings__div3">
@@ -417,7 +418,7 @@
       const vueApp = Vue.createApp({
         data() {
           return {
-            fontSizeValue: "1",
+            fontSizeValue: 1,
             fontSizeUnit: "vw",
             fontWeight: "normal",
             fontStyle: "normal",
@@ -427,9 +428,32 @@
             textDecoration: "none",
             textTransform: "none",
             textAlign: "left",
-            lineHeightValue: "1",
+            lineHeightValue: 1,
             lineHeightUnit: "vw",
             textAreaText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro voluptas fuga ducimus hic, animi ut alias dicta repudiandae incidunt quo natus vel. Illum modi deserunt porro quisquam provident maxime!",
+          }
+        },
+        computed: {
+          fontSizeValue: {
+            set: function(value) {
+              let el = document.querySelector('#font-size__input');
+              if (value <= 0) {
+                el.style.boxShadow = "0px 0px 2px 2px #ff0000";
+              } else {
+                el.style.boxShadow = "0px 0px 0px 1px #223c50";
+              }
+            }
+          },
+
+          lineHeightValue: {
+            set: function(value) {
+              let el = document.querySelector('#line-height__input');
+              if (value <= 0) {
+                el.style.boxShadow = "0px 0px 2px 2px #ff0000";
+              } else {
+                el.style.boxShadow = "0px 0px 0px 1px #223c50";
+              }
+            }
           }
         },
         methods: {

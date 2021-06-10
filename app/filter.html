@@ -20,6 +20,7 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
     crossorigin="anonymous"
   />
+  <link type="image/png" sizes="32x32" rel="icon" href="images/favicon.png">
   </head>
   <body>
     <div id="app">
@@ -87,29 +88,29 @@
             <div class="main__grid-settings">
     
               <h2>Настройки</h2>
-              <div class="flexbox-item__content">
-                <div class="flexbox-item__div1">
-                  <div class="settings__grid-text">
-                   blur
-                    <div class="tooltip tooltip-settings">&#x2754
-                      <span class="tooltiptext">Размытие. Применяет к изображению размытие по Гауссу. Значение определяет значение стандартного отклонения функции Гаусса или количество пикселей на экране, сливающихся друг с другом, поэтому большее значение приведет к большему размытию. Если параметр не указан, используется значение 0. Параметр указывается как длина CSS, но не принимает процентные значения.</span>
+                <div class="flexbox-item__content">
+                  <div class="flexbox-item__div1">
+                    <div class="settings__grid-text">
+                    blur
+                      <div class="tooltip tooltip-settings">&#x2754
+                        <span class="tooltiptext">Размытие. Применяет к изображению размытие по Гауссу. Значение определяет значение стандартного отклонения функции Гаусса или количество пикселей на экране, сливающихся друг с другом, поэтому большее значение приведет к большему размытию. Если параметр не указан, используется значение 0. Параметр указывается как длина CSS, но не принимает процентные значения.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-  
-                <div class="flexbox-item__div2">
-                  <p class="control" >
-                    <input type="number" min="0" max="10" v-model="filterBlur" class="input__percent-value">
-                    <span>px</span>
-                  </p>
-                </div>
-  
-                <div class="flexbox-item__div3">
-                  <p class="control">
-                    <input type="range" min="0" max="10" v-model="filterBlur" class="control__range-input">
-                  </p>
-                </div>
-              </div> 
+    
+                  <div class="flexbox-item__div2">
+                    <p class="control" >
+                      <input type="number" min="0" max="10" v-model="filterBlur" class="input__percent-value">
+                      <span>px</span>
+                    </p>
+                  </div>
+    
+                  <div class="flexbox-item__div3">
+                    <p class="control">
+                      <input type="range" min="0" max="10" v-model="filterBlur" class="control__range-input">
+                    </p>
+                  </div>
+                </div> 
                 <div class="flexbox-item__content">
                   <div class="flexbox-item__div1">
                     <div class="settings__grid-text">
